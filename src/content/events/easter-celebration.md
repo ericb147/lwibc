@@ -1,7 +1,7 @@
 ---
 title: "Easter Celebration: He Is Risen!"
-date: 2025-04-20
-endDate: 2025-04-20
+date: 2026-04-20
+endDate: 2026-04-20
 time: "8:00 AM & 10:30 AM Services"
 location: "Main Sanctuary"
 image: "/uploads/events/easter-celebration.webp"
