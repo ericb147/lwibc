@@ -27,14 +27,14 @@ const sermons = allSermons
     <div class="text-center mb-12">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Recent Sermons</h2>
       <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        Listen to or watch our latest messages from Sunday services
+        Watch our latest messages from Sunday services
       </p>
     </div>
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {sermons.map((sermon) => (
         <Card
-          class="shadow-none"
+          className="shadow-none"
           title={sermon.data.title}
           image={{
             src: sermon.data.image || "/images/sermon-placeholder.webp",
