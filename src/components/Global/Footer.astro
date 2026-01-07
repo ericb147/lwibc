@@ -78,64 +78,68 @@ if (officeHours) {
   OfficeHoursContent = Content;
 }
 ---
-<footer class="bg-gray-950 text-gray-300 pt-20 pb-10 border-t-4 border-primary-900">
-  <div class="container mx-auto px-4">
-    
-    <div class="flex flex-col items-center text-center mb-16">
-      <Logo class="h-28 w-28 text-primary-800 mb-6" width="112" height="112" title="LWIBC" />
-      <h2 class="text-3xl md:text-4xl font-serif text-white italic tracking-wide">
-        Living Waters
-      </h2>
-      <div class="flex items-center gap-4 w-full max-w-md my-4">
-        <div class="h-px bg-gray-800 flex-grow"></div>
-        <span class="text-xs uppercase tracking-[0.3em] text-primary-500 font-bold">Independent Baptist Church</span>
-        <div class="h-px bg-gray-800 flex-grow"></div>
-      </div>
-      <p class="font-serif text-lg text-gray-400">Preaching the Word, Reaching the World.</p>
-    </div>
+<footer class="relative">
+  <div class="h-24 bg-gradient-to-t from-gray-50 to-transparent"></div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center md:text-left border-t border-gray-900 pt-12">
+  <div class="bg-gray-50 border-t border-gray-200 py-8">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+      <a href="/" class="text-2xl font-bold text-primary-800 font-serif flex items-center group">
+        <Logo class="h-10 w-auto text-primary-800 mr-2 transition-transform group-hover:scale-105" width="40" height="40" title="LWIBC" />
+        <span class="text-primary-800">LWIBC</span>
+      </a>
       
-      <div>
-        <h4 class="font-serif text-xl text-white mb-6 italic">Location & Contact</h4>
-        <address class="not-italic space-y-3 text-sm">
-          <p class="hover:text-white transition-colors">7561 Duncan Gap Rd.<br />Wise, VA 24293</p>
-          <p class="pt-2">
-            <a href="tel:+12766397708" class="text-primary-400 hover:text-primary-300 font-bold">(276) 639-7708</a>
-          </p>
-          <p>
-            <a href="mailto:livingwatersibc@gmail.com" class="hover:text-white break-all">livingwatersibc@gmail.com</a>
-          </p>
-        </address>
-      </div>
-
-      {footerNavs.map((group) => (
-        <div>
-          <h4 class="font-serif text-xl text-white mb-6 italic">{group.title}</h4>
-          <ul class="space-y-3 text-sm">
-            {group.items.map((item) => (
-              <li>
-                <a href={item.href} class="hover:text-primary-400 transition-colors">
-                  {item.text}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </div>
-
-    <div class="mt-20 pt-8 border-t border-gray-900 flex flex-col items-center gap-6">
       <div class="flex space-x-6">
         {socialLinks.map((link) => (
-          <a href={link.href} class="p-2 rounded-full border border-gray-800 hover:border-primary-700 hover:bg-primary-900/20 text-gray-400 hover:text-white transition-all">
+          <a href={link.href} class="text-gray-400 hover:text-primary-800 transition-colors" aria-label={link.name}>
             <Fragment set:html={link.icon} />
           </a>
         ))}
       </div>
-      
-      <div class="text-center text-xs tracking-wide text-gray-500">
-        <p>&copy; {currentYear} Living Waters Independent Baptist Church. All rights reserved.</p>
+    </div>
+  </div>
+
+  <div class="bg-slate-900 text-gray-400 py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+        
+        <div class="md:col-span-4">
+          <h4 class="text-white font-bold text-xs uppercase tracking-[0.2em] mb-6">Connect With Us</h4>
+          <address class="not-italic text-sm leading-relaxed space-y-4">
+            <p class="text-gray-200 font-medium">Living Waters Independent Baptist Church</p>
+            <div class="space-y-1">
+              <p>7561 Duncan Gap Rd.</p>
+              <p>Wise, VA 24293</p>
+            </div>
+            <div class="pt-2">
+              <a href="tel:+12766397708" class="text-primary-400 font-bold text-base hover:text-primary-300 transition-colors">
+                (276) 639-7708
+              </a>
+            </div>
+          </address>
+        </div>
+
+        <div class="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
+          {footerNavs.map((group) => (
+            <div>
+              <h4 class="text-[10px] font-black uppercase tracking-[0.25em] text-gray-500 mb-6 italic">
+                {group.title}
+              </h4>
+              <ul class="space-y-3 text-sm">
+                {group.items.map((item) => (
+                  <li>
+                    <a href={item.href} class="hover:text-white transition-colors">
+                      {item.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-white/5 text-[10px] uppercase tracking-[0.3em] text-gray-600 text-center md:text-left">
+        <p>&copy; {currentYear} Living Waters Independent Baptist Church</p>
       </div>
     </div>
   </div>
