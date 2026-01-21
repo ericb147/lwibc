@@ -3,6 +3,7 @@ import "../assets/styles/global.css";
 import Seo from "../components/UI/Seo.astro";
 import Header from "../components/Global/Header.astro";
 import Footer from "../components/Global/Footer.astro";
+import Logo from "../components/UI/Logo.astro";
 
 export interface Props {
   title?: string;
@@ -16,11 +17,11 @@ export interface Props {
 }
 
 const {
-  title = "Church Name - A Welcoming Christian Community",
+  title = "Living Waters Independent Baptist Church",
   description = "We are a welcoming Christian community dedicated to sharing God's love through worship, fellowship, and service.",
   image = {
     url: "/uploads/church-default.webp",
-    alt: "Church Name",
+    alt: "Living Waters Independent Baptist Church",
   },
   type = "website",
   canonicalUrl,
