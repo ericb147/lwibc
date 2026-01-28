@@ -1,30 +1,34 @@
 ---
-name: "Rev. Dr. John Smith"
+name: "Dr. Ricky Mullins"
 title: "Senior Pastor"
-image: "/uploads/staff/john-smith.webp"
-email: "pastor.john@churchname.org"
-phone: "+1-555-0101"
-bio: "Pastor John has been faithfully serving our congregation for over 12 years, bringing wisdom, compassion, and biblical teaching to our community."
+image: "/uploads/staff/ricky-mullins.jpg"
+email: "pastor@lwibc.com"
+# phone: "+1-276-xxx-xxxx"
+bio: "Dr. Ricky Mullins is a southwest Virginia native with over 20 years of ministry experience, dedicated to old-time preaching and biblical theology."
 order: 1
 draft: false
 ---
 
-Rev. Dr. John Smith has been the Senior Pastor of our church since 2013. He holds a Doctor of Ministry from Seminary University and has over 20 years of pastoral experience.
+Dr. Ricky Mullins was born and raised in the mountains of southwest Virginia. An ordained Independent Baptist preacher, he has been preaching since he was 18 years old. Before becoming the Senior Pastor at Living Waters Independent Baptist Church on August 1, 2022, he served in various roles including Youth Pastor, Music Minister, Sunday School Superintendent, and Senior Pastor of Valley View Baptist Church in Richmond, Kentucky.
 
 ## Ministry Philosophy
 
-Pastor John believes in expository preaching, pastoral care, and community engagement. His heart is to see people grow in their relationship with Christ and serve others with love.
+Pastor Ricky is known for holding true to old-time preaching and singing. His ministry is built on the foundation of sound pastoral theology and a heart for evangelism, having previously established RDM Ministries to spread the Gospel.
 
 ## Areas of Focus
 
-- Biblical preaching and teaching
-- Pastoral counseling and care
-- Leadership development
-- Community outreach initiatives
-- Vision casting for the church
+- Expository, "old-time" biblical preaching
+- Evangelism and community outreach
+- Pastoral theology and leadership
+- Traditional music ministry
+- Discipleship and Sunday School oversight
+
+## Education
+
+Ricky attended UVA Wise, Liberty University, and Virginia Tech. He also holds a doctorate in pastoral theology from Andersonville Theological Seminary.
 
 ## Personal Life
 
-Pastor John is married to Sarah, and they have three children. He enjoys reading, hiking, and spending time with his family. He is also an avid supporter of local community programs.
+Ricky married his wife, Brooke, in 2010. They currently reside in Wise County, Virginia, with their two sons, Silas and Jesse.
 
-Contact Pastor John for pastoral care, counseling, or to discuss the vision and direction of our church.
+Contact Pastor Ricky for spiritual guidance, counseling, or to learn more about the mission of Living Waters Independent Baptist Church.

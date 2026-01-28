@@ -1,0 +1,100 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/Sections/PageHeader.astro";
+import { getCollection } from "astro:content";
+
+// Fetch and sort staff exactly like the ministries template
+const all = await getCollection("staff", ({ data }) =>
+  import.meta.env.PROD ? !data.draft : true
+);
+
+const staff = all.sort((a, b) =>
+  (a.data.order ?? 0) - (b.data.order ?? 0) ||
+  a.data.name.localeCompare(b.data.name)
+);
+---
+
+<BaseLayout
+  title="Staff - Living Waters Independent Baptist Church"
+  description="Meet our dedicated church staff and leadership team who serve our congregation with passion and commitment."
+>
+  <PageHeader 
+    title="Our Staff" 
+    subtitle="Meet our dedicated leadership team"
+    backgroundImage="/uploads/page-header-bg.webp"
+  />
+  
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Leadership</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Dedicated to serving God and our community.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {staff.map(member => (
+          <a
+            href={`/staff/${member.slug}`}
+            class="bg-white rounded-lg shadow flex flex-col overflow-hidden hover:shadow-lg transition min-h-[370px]"
+          >
+            {member.data.image && (
+              <div class="w-full h-[250px] overflow-hidden">
+                <img
+                  src={member.data.image}
+                  alt={member.data.name}
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            )}
+
+            <div class="p-6 flex flex-col flex-1 justify-between">
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-1">{member.data.name}</h3>
+                <p class="text-primary-600 font-medium mb-3">{member.data.title}</p>
+                <p class="text-gray-700 text-sm leading-relaxed">{member.data.bio}</p>
+              </div>
+              
+              <div class="mt-4 pt-4 border-t border-gray-100">
+                <span class="text-primary-700 text-sm font-semibold flex items-center">
+                  View Full Profile
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-gray-50">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Need to Contact a Staff Member?</h2>
+        <p class="text-xl text-gray-600 mb-8">
+          Our staff is here to serve you and answer any questions you may have. Feel free to reach out to any of our team members directly or contact our main office.
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-4">
+          <a 
+            href="/contact" 
+            class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-white bg-primary-600 rounded-md shadow-sm hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+          >
+            Contact Us
+          </a>
+          
+          <a 
+            href="/about-us" 
+            class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+          >
+            Learn More About Our Church
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

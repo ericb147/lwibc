@@ -1,6 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import Logo from "../UI/Logo.astro";
 
 // Get the office hours from the siteInfo collection
 let officeHours;
@@ -45,27 +44,23 @@ const footerNavs = [
 
 // Social media links
 const socialLinks = [
-  { 
-    name: "Facebook",
-    href: "https://facebook.com/yourchurch", 
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-          </svg>` 
-  },
-  { 
-    name: "Instagram", 
-    href: "https://instagram.com/yourchurch", 
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-          </svg>` 
-  },
+
   { 
     name: "YouTube", 
-    href: "https://youtube.com/yourchurch", 
+    href: "https://www.youtube.com/@LivingWatersIndependentBaptist", 
     icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
             <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
           </svg>` 
   },
+  { 
+    name: "Flocknote", 
+    href: "https://LivingWatersIBC.flocknote.com", 
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <g transform="scale(0.138) translate(-1 -1)">
+              <path d="M172.5,64.7c-0.8-4.6-3-8.3-6.5-11.3c-1.4-1.2-2.9-2.1-4.5-2.8c-0.6-0.2-1.1-0.5-1.7-0.7 c-0.4-0.1-0.4-0.4-0.4-0.7c0-0.9,0-1.8-0.1-2.7c-0.2-3.4-1.4-6.5-3.4-9.3c-1.6-2.3-3.7-4.2-6.2-5.6c-3-1.7-6.3-2.5-9.8-2.3 c-0.4,0-0.5-0.1-0.7-0.4c-1.4-3.9-3.8-7.1-7.1-9.5c-1.4-1-3-1.8-4.7-2.3c-2.3-0.8-4.6-1.1-7-1c-1.7,0.1-3.3,0.4-4.9,0.9 c-1.6,0.5-3,1.2-4.4,2.1c-0.3,0.2-0.5,0.1-0.7-0.1c-1.2-1.1-2.3-2.2-3.6-3.2c-1.3-1-2.7-1.8-4.2-2.4c-1.7-0.7-3.5-1.3-5.4-1.5 c-0.2,0-0.3-0.1-0.4-0.2h-5.8c-0.2,0.1-0.4,0.2-0.6,0.2c-1.6,0.2-3.1,0.6-4.6,1.2c-2.4,0.9-4.6,2.2-6.5,3.9c-0.3,0.3-0.5,0.3-0.9,0 c-2-1.4-4.2-2.4-6.6-2.9c-2.4-0.5-4.8-0.6-7.2-0.2c-4.8,0.9-8.6,3.2-11.6,7c-0.9,1.2-1.7,2.5-2.3,3.8c-0.1,0.2-0.3,0.4-0.5,0.5 c-0.9,0.3-1.8,0.6-2.6,1c-1.3,0.6-2.6,1.2-3.9,1.9c-2.1,1.2-3.9,2.8-5.5,4.6c-1.7,2-3.2,4.1-4.2,6.5c-0.5,1.3-1,2.6-1.4,4 c-0.2,0.5-0.3,0.9-0.9,1.1c-2.1,0.8-4.1,2-5.9,3.4c-2.8,2.2-5,4.8-6.7,8c-1.5,2.7-2.4,5.5-2.8,8.5c0,0.2-0.2,0.4-0.3,0.6v6.3 c0.1,0.2,0.2,0.4,0.2,0.5c0.3,2.2,0.9,4.3,1.7,6.3c0.1,0.2,0.1,0.4,0,0.6c-0.5,1.5-0.8,3-1.1,4.5c-0.4,2.4-0.3,4.9,0,7.3 c0.2,1.7,0.6,3.4,1.2,5c1,2.8,2.4,5.3,4.3,7.6c2,2.4,4.4,4.4,7.1,6c1,0.6,2,1,2.9,1.5c0.3,0.2,0.5,0.4,0.8,0.6c0.8,1,1.6,2,2.5,2.9 c0.3,0.3,0.3,0.6,0.1,0.9c-1,2.1-2,4.2-3,6.3c-0.6,1.2-1.2,2.4-1.7,3.7c-0.4,0.9-0.5,1.9-0.4,2.9c0.3,2.6,1.6,4.4,3.8,5.6 c1.7,0.8,3.4,0.9,5.2,0.3c2.1-0.7,3.4-2.3,4.3-4.3c0.7-1.6,1.5-3.3,2.3-4.9c0.4-0.9,0.9-1.8,1.3-2.7c0.3-0.7,0.4-0.7,1.2-0.6 c1.3,0.2,2.6,0.3,3.9,0.5c0.6,0.1,0.7,0.2,0.5,0.7c-0.5,1.1-0.9,2.3-1.3,3.4c-0.4,1.1-0.8,2.1-1.2,3.1c-0.4,1.1-0.8,2.2-1.3,3.3 c-0.3,0.7-0.6,1.5-0.8,2.2c-0.7,2.9,0.2,5.2,2.4,7c0.6,0.5,1.4,0.8,2.1,1.1c1.2,0.6,2.4,0.2,3.7,0.3c1.3-0.6,2.7-1.2,3.7-2.4 c0.6-0.8,1-1.7,1.4-2.6c0.4-1.1,0.9-2.2,1.3-3.4c0.4-1,0.8-2,1.1-3c0.4-1.1,0.8-2.1,1.2-3.2c0.4-1.1,0.9-2.2,1.3-3.3 c0.1-0.3,0.3-0.5,0.7-0.4c2.4,0.3,4.8,0,7.2-0.5c1.9-0.5,3.8-1.3,5.5-2.3c0.2-0.1,0.5-0.2,0.8-0.1c1,0.3,2,0.8,3,1.1 c2.5,0.8,5.1,1,7.7,0.8c1.7-0.2,3.4-0.5,5-1c0.2-0.1,0.4,0,0.6,0.2c1.2,0.8,2.3,1.7,3.5,2.4c1.3,0.8,2.7,1.3,4.2,1.6 c1.4,0.3,2.8,0.6,4.2,0.6c1.5,0,2.9-0.2,4.4-0.5c1.5-0.2,2.9-0.8,4.3-1.5c0.7-0.4,1.5-0.8,2.2-1.3c0.4-0.2,0.7-0.3,1.2-0.2 c1.2,0.3,2.4,0.5,3.6,0.8c0.2,0.1,0.5,0.3,0.6,0.5c0.3,0.7,0.6,1.5,0.9,2.2c0.4,1.1,0.8,2.2,1.3,3.3c0.4,1.1,0.8,2.1,1.2,3.2 c0.6,1.5,1.1,3.1,1.8,4.6c0.8,1.6,2.1,2.6,3.8,3.2c1.6,0.5,3.1,0.5,4.6-0.1c1.6-0.6,2.8-1.7,3.6-3.2c0.7-1.3,0.9-2.7,0.7-4.2 c-0.2-0.9-0.5-1.8-0.8-2.7c-0.5-1.4-1.1-2.8-1.6-4.2c-0.5-1.4-1.1-2.7-1.6-4.1c-0.1-0.3-0.1-0.5,0.2-0.7c1.3-0.7,2.5-1.4,3.8-2.2 c0.3-0.2,0.4-0.1,0.6,0.2c0.8,1.7,1.6,3.4,2.5,5.1c0.7,1.4,1.2,2.9,2.5,3.9c1.9,1.6,4.1,2.1,6.5,1.4c2.1-0.6,3.6-2.1,4.4-4.2 c0.6-1.7,0.6-3.4-0.1-5c-1.1-2.3-2.1-4.5-3.2-6.8c-1-2.1-2-4.2-3-6.3c-0.3-0.6-0.4-1,0.1-1.5c0.1-0.1,0.3-0.3,0.5-0.3 c1.8-0.6,3.4-1.6,4.9-2.7c2.4-1.8,4.3-4.1,5.6-6.8c1.7-3.6,2.3-7.5,1.6-11.5c-0.1-0.8-0.3-1.6-0.5-2.3c-0.1-0.3,0-0.6,0.3-0.8 c2.1-1.6,3.8-3.6,5-6C172.6,73.1,173.3,69,172.5,64.7L172.5,64.7z M154.9,58.1c0.1,0.9-0.4,1.7-0.8,2.5c-0.4,0.7-0.8,1.4-1.2,2.1 c-0.9,1.4-1.9,2.7-3.2,3.6c-0.8,0.6-1.5,1.2-2.3,1.6c-0.9,0.5-1.9,0.9-2.8,1.3c-0.5,0.2-1,0.4-1.5,0.6c-0.7,0.2-1.4,0.3-2,0.5 c-0.6,0.2-1.1,0.3-1.6,0.6c-0.4,0.2-0.8,0.6-1.1,1c-0.1,0.1-0.1,0.1-0.1,0.2c-0.1,0.7-0.3,1.4-0.1,2.1c0.2,0.8,0.3,1.6,0.4,2.4 c0.2,0.8,0.4,1.6,0.6,2.4c0.2,0.9,0.3,1.8,0.5,2.7c0.1,0.4,0.1,0.8,0.2,1.2c0.1,0.5,0.1,1,0.2,1.5c0.1,0.8,0.2,1.7,0.3,2.5 c0,0.2,0.1,0.3,0.1,0.4c0,2.2,0,4.3,0,6.4c0,0.6-0.2,1.1-0.2,1.6c-0.1,0.6-0.1,1.3-0.2,1.9c-0.1,0.5-0.1,1-0.3,1.5 c-0.1,0.6-0.4,1.1-0.5,1.7c-0.2,0.5-0.3,1.1-0.6,1.6c-0.3,0.6-0.6,1.2-1,1.7c-0.3,0.5-0.7,1-1,1.5c-0.7,1-1.7,1.8-2.8,2.4 c-0.6,0.3-1.1,0.7-1.7,0.9c-0.6,0.2-1.3,0.3-1.9,0.4c-0.6,0.1-1.3,0.2-1.9,0.2c-0.7,0-1.4-0.1-2.1-0.2c-0.6-0.1-1.1-0.4-1.7-0.6 c-0.5-0.2-1.1-0.4-1.6-0.8c-0.7-0.4-1.5-0.9-2.1-1.4c-0.7-0.5-1.3-1.1-1.9-1.8c-0.9-0.9-1.7-1.9-2.5-2.9c-0.5-0.6-0.9-1.2-1.4-1.8 c-0.6-0.8-1-1.7-1.6-2.6c-0.3-0.5-0.5-0.9-0.8-1.4c-0.3-0.6-0.6-1.1-0.9-1.7c-0.4-0.7-0.7-1.4-1-2.2c-0.3-0.7-0.5-1.4-0.8-2.1 c-0.2-0.4-0.4-0.8-0.6-1.3c-0.2-0.4-0.3-0.8-0.5-1.3c-0.2-0.5-0.3-0.9-0.5-1.4c-0.2-0.6-0.4-1.1-0.6-1.7c-0.2-0.8-0.6-1.6-1.1-2.3 c-0.6-0.8-1.5-0.9-2.5-0.8c-0.8,0.1-1.6,0.4-2.4,0.8c-0.6,0.2-1.2,0.3-1.8,0.4c-0.1,0-0.2,0.1-0.3,0.1c-0.5,0.3-1,0.3-1.6,0.3 c-0.8,0-1.7,0.2-2.5,0.2c-0.9,0-1.8-0.1-2.7-0.2c-0.7-0.1-1.4-0.4-2.1-0.6c-0.5-0.2-1-0.3-1.4-0.5c-0.3-0.1-0.6-0.3-0.9-0.4 c-0.9-0.5-1.9-1.1-2.8-1.7c-0.6-0.4-1-1-1.3-1.7c-0.2-0.6,0.1-1.1,0.5-1.4c0.7-0.9,1.6-1.7,2.4-2.4c1.2-1,2.6-1.9,3.9-2.8 c0.5-0.3,1.1-0.6,1.7-0.9c0.4-0.2,0.8-0.4,1.2-0.6c0.5-0.2,0.9-0.3,1.4-0.4c0.1,0,0.1,0,0.2,0c0.8-0.5,1.8-0.3,2.7-0.7 c0.5-0.2,1.2-0.2,1.7-0.5c0.6-0.3,1.2-0.7,1.7-1.2c0.5-0.5,0.9-1.1,1.4-1.7c0.2-0.3,0.3-0.6,0.4-0.8c0.5-1.2,1.2-2.4,2-3.5 c0.6-0.9,1.3-1.7,2.1-2.4c0.8-0.8,1.6-1.5,2.5-2.1c0.8-0.6,1.6-1.1,2.5-1.6c0.4-0.2,0.8-0.4,1.3-0.6c0.5-0.2,0.9-0.4,1.4-0.6 c0.2-0.1,0.5,0,0.6-0.1c1-0.5,2.1-0.4,3.2-0.6c1.1-0.2,2.2,0,3.3,0.1c0.2,0,0.3,0.1,0.5,0.1c0.9-0.1,1.7,0.3,2.6,0.4 c0.1,0,0.2,0,0.2,0.1c1.2,0.5,2.4,0.9,3.6,1.4c0.5,0.2,1,0.6,1.5,0.9c0.5,0.3,1,0.6,1.6,0.9c0.4,0.2,0.8,0.5,1.3,0.6 c0.5,0.2,1,0.3,1.6,0.3c0.5,0,1.1,0,1.6-0.1c0.6-0.1,1.1-0.2,1.7-0.4c0.4-0.2,0.8-0.5,1.3-0.6c0.6-0.2,1.2-0.3,1.7-0.5 c2-0.5,4.1-0.4,6.1-0.3c0.9,0,1.8-0.1,2.7,0.3c0.3,0.1,0.6,0.1,1,0.1c0.6,0.1,1.2,0.2,1.8,0.3c0.7,0.2,1.2,0.6,1.6,1.2 C155,57.5,154.9,57.9,154.9,58.1L154.9,58.1z"/>
+            </g>
+          </svg>` 
+  }
 ];
 
 // Current year for copyright
@@ -78,69 +73,112 @@ if (officeHours) {
   OfficeHoursContent = Content;
 }
 ---
-<footer class="relative">
-  <div class="h-24 bg-gradient-to-t from-gray-50 to-transparent"></div>
 
-  <div class="bg-gray-50 border-t border-gray-200 py-8">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
-      <a href="/" class="text-2xl font-bold text-primary-800 font-serif flex items-center group">
-        <Logo class="h-10 w-auto text-primary-800 mr-2 transition-transform group-hover:scale-105" width="40" height="40" title="LWIBC" />
-        <span class="text-primary-800">LWIBC</span>
-      </a>
-      
-      <div class="flex space-x-6">
-        {socialLinks.map((link) => (
-          <a href={link.href} class="text-gray-400 hover:text-primary-800 transition-colors" aria-label={link.name}>
-            <Fragment set:html={link.icon} />
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+  <div class="container">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <!-- Church Info -->
+      <div>
+        <div class="mb-4">
+          <a href="/" class="text-2xl font-bold text-white font-serif inline-flex items-center">
+            <span class="sr-only">Living Waters Independent Baptist Church</span>
+            <span>Living Waters Independent Baptist Church</span>
           </a>
-        ))}
-      </div>
-    </div>
-  </div>
-
-  <div class="bg-slate-900 text-gray-400 py-16">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+        </div>
         
-        <div class="md:col-span-4">
-          <h4 class="text-white font-bold text-xs uppercase tracking-[0.2em] mb-6">Connect With Us</h4>
-          <address class="not-italic text-sm leading-relaxed space-y-4">
-            <p class="text-gray-200 font-medium">Living Waters Independent Baptist Church</p>
-            <div class="space-y-1">
-              <p>7561 Duncan Gap Rd.</p>
-              <p>Wise, VA 24293</p>
-            </div>
-            <div class="pt-2">
-              <a href="tel:+12766397708" class="text-primary-400 font-bold text-base hover:text-primary-300 transition-colors">
-                (276) 639-7708
+        <address class="not-italic mb-4 text-gray-300">
+          <p>7561 Duncan Gap Rd.</p>
+          <p>Wise, VA 24293</p>
+          <!-- <p class="mt-2">
+            <a href="tel:+15551234567" class="hover:text-primary-300">
+              (555) 123-4567
+            </a>
+          </p> -->
+          <p>
+            <a href="mailto:RDMinistries2021@gmail.com" class="hover:text-primary-300">
+              RDMinistries2021@gmail.com
+            </a>
+          </p>
+        </address>
+        
+        <!-- Office Hours -->
+        <!-- <div class="mt-4 text-gray-300">
+          <h4 class="text-sm font-bold mb-2 text-white">Office Hours</h4>
+          {
+            OfficeHoursContent ? (
+              <div class="text-sm prose prose-sm prose-invert max-w-none [&_h3]:text-white [&_h3]:text-sm [&_h3]:font-bold [&_h3]:mb-2 [&_ul]:list-none [&_ul]:p-0 [&_li]:mb-1 [&_strong]:text-white">
+                <OfficeHoursContent />
+              </div>
+            ) : (
+              <div class="text-sm">
+                <p><strong class="text-white">Mon-Fri:</strong> 9:00 AM - 5:00 PM</p>
+                <p><strong class="text-white">Saturday:</strong> 9:00 AM - 1:00 PM</p>
+                <p><strong class="text-white">Sunday:</strong> Closed (except services)</p>
+              </div>
+            )
+          }
+        </div> -->
+
+        <div class="mt-4 text-gray-300">
+          <h4 class="text-sm font-bold mb-2 text-white">Service Times</h4>
+          {
+          <div class="text-sm">
+            <p><strong class="text-white">Sunday Morning:</strong> 11:00 AM</p>
+            <p><strong class="text-white">Wednesday Night:</strong> 7:00 PM</p>
+          </div>
+            
+          }
+        </div>
+        
+        <!-- Social Links -->
+        <div class="flex space-x-4 mt-6">
+          {
+            socialLinks.map((link) => (
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-400 hover:text-white transition-colors"
+                aria-label={link.name}
+              >
+                <Fragment set:html={link.icon} />
               </a>
-            </div>
-          </address>
-        </div>
-
-        <div class="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
-          {footerNavs.map((group) => (
-            <div>
-              <h4 class="text-[10px] font-black uppercase tracking-[0.25em] text-gray-500 mb-6 italic">
-                {group.title}
-              </h4>
-              <ul class="space-y-3 text-sm">
-                {group.items.map((item) => (
-                  <li>
-                    <a href={item.href} class="hover:text-white transition-colors">
-                      {item.text}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            ))
+            
+          }
+          
         </div>
       </div>
-
-      <div class="mt-16 pt-8 border-t border-white/5 text-[10px] uppercase tracking-[0.3em] text-gray-600 text-center md:text-left">
-        <p>&copy; {currentYear} Living Waters Independent Baptist Church</p>
-      </div>
+      
+      <!-- Navigation Links -->
+      {
+        footerNavs.map((group) => (
+          <div>
+            <h4 class="text-lg font-bold mb-4 text-white">{group.title}</h4>
+            <ul class="space-y-2">
+              {group.items.map((item) => (
+                <li>
+                  <a 
+                    href={item.href} 
+                    class="text-gray-300 hover:text-primary-300 transition-colors"
+                  >
+                    {item.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+    
+    <!-- Copyright -->
+    <div class="pt-8 mt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+      <p>&copy; {currentYear} Living Waters Independent Baptist Church. All rights reserved.</p>
+      <p class="mt-2">
+        Created by 
+        <a href="https://www.ericblankenship.dev" class="hover:text-primary-300 mr-4">ericblankenship.dev</a>
+      </p>
     </div>
   </div>
 </footer>

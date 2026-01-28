@@ -5,34 +5,33 @@ import StaffList from "../components/Sections/StaffList.astro";
 ---
 
 <BaseLayout
-  title="About Us - Church Name"
+  title="About Us - Living Waters Independent Baptist Church"
   description="Learn about our church's history, mission, values, and the people who make our community special."
 >
   <PageHeader 
     title="About Us" 
     subtitle="Our History, Mission, and Values"
-    backgroundImage="https://images.unsplash.com/photo-1438032005730-c779502df39b?w=1920&h=600&fit=crop&crop=center"
+    backgroundImage="/uploads/99ec98fdb81945c29c25a3ad6c5606b1.avif"
   />
   
-  <!-- Mission & Vision -->
-  <section class="py-16">
-    <div class="container">
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
           <h2 class="text-3xl md:text-4xl font-bold mb-6">Our Mission</h2>
           <p class="text-xl text-gray-700 mb-8">
-            To know Christ and to make Him known through worship, discipleship, fellowship, and service.
+            To develop dedicated followers of Jesus through a strong, local church.
           </p>
           
           <h2 class="text-3xl md:text-4xl font-bold mb-6">Our Vision</h2>
           <p class="text-xl text-gray-700 mb-8">
-            To be a vibrant, growing community of believers who are transformed by the Gospel and transforming our community with the love of Christ.
+            Our desire is to help people discover a personal relationship with Jesus Christ, to help them grow deeper in that relationship, and to equip them to live a life that exalts Jesus Christ and points others to that same kind of relationship with Him.
           </p>
         </div>
         
         <div>
           <img 
-            src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop&crop=center" 
+            src="/uploads/c60bd8b126114b8db6abba5a96fa6b10.avif" 
             alt="Worship at our church" 
             class="rounded-lg shadow-lg object-cover w-full h-full"
           />
@@ -40,236 +39,164 @@ import StaffList from "../components/Sections/StaffList.astro";
       </div>
     </div>
   </section>
-  
-  <!-- Core Values -->
-  <section class="py-16 bg-gray-50">
-    <div class="container">
+
+  <section class="py-16 bg-gray-50 border-y border-gray-100">
+    <div class="container mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Core Values</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">What We Believe</h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          These principles guide everything we do as a church community
+          Living Waters Independent Baptist Church adheres to these fundamental Biblical doctrines.
         </p>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-lg shadow-sm">
-          <div class="w-16 h-16 rounded-full bg-primary-100 flex items-center justify-center mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+      <div class="max-w-4xl mx-auto prose prose-lg text-gray-700">
+        <h3>The Holy Scriptures</h3>
+        <p>
+          We believe the Old and New Testament Scriptures are the verbally and plenarily inspired Word of God, inerrant and infallible. The <strong>King James Version</strong> of the Bible is the official and only translation used by the church.
+        </p>
+
+        <h3>The Triune God</h3>
+        <p>
+          We believe in one triune God, eternally existing in three persons—Father, Son, and Holy Spirit—each co-eternal in being and co-equal in power and glory.
+        </p>
+
+        <h3>Creation</h3>
+        <p>
+          We believe the Genesis account of creation is a literal, historical account of God’s creation of the universe in <strong>six literal, 24-hour periods</strong>. We reject evolution and other unscriptural theories of origin.
+        </p>
+
+        <h3>The Person and Work of Christ</h3>
+        <p>
+          We believe Jesus Christ, the eternal Son of God, was conceived by the Holy Spirit and born of the virgin Mary. He accomplished our redemption through His death on the cross as a substitutionary sacrifice and ensured our justification by His literal, physical resurrection.
+        </p>
+
+        <h3>The Holy Spirit</h3>
+        <p>
+          We believe the Holy Spirit convicts the world of sin and is the Supernatural Agent in regeneration. We believe the sign gifts, such as speaking in tongues and the gift of healing, were temporary and are not for this age.
+        </p>
+
+        <h3>Salvation and Eternal Security</h3>
+        <p>
+          We believe salvation is the gift of God brought to man by grace and received by personal faith in the Lord Jesus Christ. Once saved, a person is kept by God’s power and is <strong>secure in Christ forever</strong>.
+        </p>
+
+        <h3>The Church</h3>
+        <p>
+          We believe the local church is an autonomous body of born-again believers. We recognize <strong>water baptism by immersion</strong> and the Lord’s Supper as the Scriptural ordinances of obedience.
+        </p>
+
+        <h3>The Second Coming</h3>
+        <p>
+          We believe in the personal, imminent return of Christ, who will <strong>rapture His church prior to the seven-year tribulation period</strong>.
+        </p>
+
+        <h3>Marriage and the Family</h3>
+        <p>
+          We believe marriage is the joining of <strong>one naturally-born man and one naturally-born woman for life</strong>. We believe God has ordained the husband as the leader of the home and men as the leaders (pastors and deacons) of the church.
+        </p>
+
+        <h3>The Sanctity of Life</h3>
+        <p>
+          We believe human life begins at conception and that unborn children are living human beings; therefore, abortion is the unjustified taking of human life. We also believe that euthanasia is a moral evil contrary to the will of God.
+        </p>
+
+        <div class="mt-12 text-center not-prose">
+          <a 
+            href="/uploads/Statement-of-Faith.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-lg transition-all transform hover:-translate-y-1"
+          >
+            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
             </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Biblical Teaching</h3>
-          <p class="text-gray-700">
-            We are committed to teaching God's Word faithfully and helping people apply it to their lives. We believe the Bible is God's inspired, inerrant Word and our ultimate authority.
-          </p>
-        </div>
-        
-        <div class="bg-white p-8 rounded-lg shadow-sm">
-          <div class="w-16 h-16 rounded-full bg-secondary-100 flex items-center justify-center mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-secondary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Authentic Community</h3>
-          <p class="text-gray-700">
-            We believe spiritual growth happens best in community. We foster genuine relationships where people can be known, loved, and challenged to grow in their faith.
-          </p>
-        </div>
-        
-        <div class="bg-white p-8 rounded-lg shadow-sm">
-          <div class="w-16 h-16 rounded-full bg-accent-100 flex items-center justify-center mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Missional Living</h3>
-          <p class="text-gray-700">
-            We believe every follower of Jesus is called to share His love with others. We equip and encourage our members to live on mission in their neighborhoods, workplaces, and beyond.
-          </p>
-        </div>
-        
-        <div class="bg-white p-8 rounded-lg shadow-sm">
-          <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Spiritual Growth</h3>
-          <p class="text-gray-700">
-            We are committed to helping people grow in their relationship with Christ, becoming more like Him in their thoughts, words, and actions through discipleship and spiritual practices.
-          </p>
-        </div>
-        
-        <div class="bg-white p-8 rounded-lg shadow-sm">
-          <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Spirit-Led Worship</h3>
-          <p class="text-gray-700">
-            We value authentic, heartfelt worship that glorifies God and transforms lives. We seek to create environments where people can encounter God's presence.
-          </p>
-        </div>
-        
-        <div class="bg-white p-8 rounded-lg shadow-sm">
-          <div class="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Servant Leadership</h3>
-          <p class="text-gray-700">
-            We believe leadership is about service, not status. We develop and empower leaders who model Christ-like humility and sacrifice as they guide others.
-          </p>
+            Read Full Statement of Faith & Covenant (PDF)
+          </a>
         </div>
       </div>
     </div>
   </section>
-  
-  <!-- Church History -->
-  <section class="py-16">
-    <div class="container">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our History</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          The story of how our church has grown and evolved over the years
-        </p>
-      </div>
-      
-      <div class="max-w-4xl mx-auto">
-        <div class="relative pl-8 sm:pl-16 py-6 group">
-          <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-7 before:h-full before:px-px before:bg-gray-300 before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-7 after:w-4 after:h-4 after:bg-primary-600 after:border-4 after:border-white after:rounded-full after:-translate-x-1/2 after:translate-y-1.5">
-            <time class="sm:w-28 text-xs text-gray-500 uppercase">1950</time>
-            <div>
-              <h3 class="text-xl font-bold text-gray-900">Church Founded</h3>
-              <p class="text-gray-700">
-                Our church was founded by a small group of dedicated believers who met in homes for Bible study and prayer.
-              </p>
-            </div>
-          </div>
-          
-          <div class="relative pl-8 sm:pl-16 py-6 group">
-            <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-7 before:h-full before:px-px before:bg-gray-300 before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-7 after:w-4 after:h-4 after:bg-primary-600 after:border-4 after:border-white after:rounded-full after:-translate-x-1/2 after:translate-y-1.5">
-              <time class="sm:w-28 text-xs text-gray-500 uppercase">1965</time>
-              <div>
-                <h3 class="text-xl font-bold text-gray-900">First Building</h3>
-                <p class="text-gray-700">
-                  As the congregation grew, we purchased our first building and expanded our ministries to serve the community.
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="relative pl-8 sm:pl-16 py-6 group">
-            <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-7 before:h-full before:px-px before:bg-gray-300 before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-7 after:w-4 after:h-4 after:bg-primary-600 after:border-4 after:border-white after:rounded-full after:-translate-x-1/2 after:translate-y-1.5">
-              <time class="sm:w-28 text-xs text-gray-500 uppercase">1988</time>
-              <div>
-                <h3 class="text-xl font-bold text-gray-900">New Campus</h3>
-                <p class="text-gray-700">
-                  We moved to our current location and built a larger sanctuary to accommodate our growing congregation.
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="relative pl-8 sm:pl-16 py-6 group">
-            <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-7 before:h-full before:px-px before:bg-gray-300 before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-7 after:w-4 after:h-4 after:bg-primary-600 after:border-4 after:border-white after:rounded-full after:-translate-x-1/2 after:translate-y-1.5">
-              <time class="sm:w-28 text-xs text-gray-500 uppercase">2010</time>
-              <div>
-                <h3 class="text-xl font-bold text-gray-900">Community Center</h3>
-                <p class="text-gray-700">
-                  We opened our community center to better serve our neighbors through various outreach programs and ministries.
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="relative pl-8 sm:pl-16 py-6 group">
-            <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-7 before:h-full before:px-px before:bg-gray-300 before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-7 after:w-4 after:h-4 after:bg-primary-600 after:border-4 after:border-white after:rounded-full after:-translate-x-1/2 after:translate-y-1.5">
-              <time class="sm:w-28 text-xs text-gray-500 uppercase">Present</time>
-              <div>
-                <h3 class="text-xl font-bold text-gray-900">Continuing the Mission</h3>
-                <p class="text-gray-700">
-                  Today, we continue to grow and adapt while staying true to our mission of knowing Christ and making Him known.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Leadership Team Preview -->
-  <section class="py-16 bg-gray-50">
-    <div class="container">
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">Meet Our Leadership</h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Our dedicated staff and leadership team serve our congregation with passion and commitment
+          Our dedicated staff and leadership team serve our congregation with passion and commitment.
         </p>
       </div>
       
-      <!-- Show limited staff preview -->
       <StaffList showAll={false} limit={3} />
       
       <div class="mt-12 text-center">
         <a 
           href="/staff" 
-          class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-white bg-primary-600 rounded-md shadow-sm hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+          class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-blue-600 rounded-md shadow-sm hover:bg-blue-700 transition"
         >
           Meet All Our Staff
         </a>
       </div>
     </div>
   </section>
-  
-  <!-- Statement of Faith -->
-  <section class="py-16">
-    <div class="container">
+
+<section class="py-16 bg-gray-50 border-t border-gray-100">
+    <div class="container mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">What We Believe</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Our Story</h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Our church adheres to these fundamental Christian beliefs
+          How God has guided Living Waters Independent Baptist Church through the years.
         </p>
       </div>
       
-      <div class="max-w-4xl mx-auto prose prose-lg">
-        <h3>The Bible</h3>
-        <p>
-          We believe the Bible is God's Word, inspired by the Holy Spirit, without error in the original manuscripts, and the final authority for all Christian faith and life.
-        </p>
+      <div class="max-w-4xl mx-auto">
+        <div class="relative pl-8 sm:pl-16 py-6 group">
+          <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-7 before:h-full before:px-px before:bg-gray-300 before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-7 after:w-4 after:h-4 after:bg-blue-600 after:border-4 after:border-white after:rounded-full after:-translate-x-1/2 after:translate-y-1.5">
+            <time class="sm:w-28 text-xs text-gray-500 font-bold uppercase">2003 - 2004</time>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900">A New Beginning in Duncan Gap</h3>
+              <p class="text-gray-700">
+                After starting Living Waters in 2003, Ricky Mullins Sr. became the pastor of a small white church in Duncan Gap known as House of Prayer. Combining the two, <strong>Living Waters House of Prayer</strong> was born—becoming a spiritual home where Ricky Mullins Jr. would eventually announce his calling to preach and marry his wife, Brooke.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative pl-8 sm:pl-16 py-6 group">
+          <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-7 before:h-full before:px-px before:bg-gray-300 before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-7 after:w-4 after:h-4 after:bg-blue-600 after:border-4 after:border-white after:rounded-full after:-translate-x-1/2 after:translate-y-1.5">
+            <time class="sm:w-28 text-xs text-gray-500 font-bold uppercase">2017</time>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900">Building for the Future</h3>
+              <p class="text-gray-700">
+                Burdened to expand, Ricky Sr. and the congregation moved from the "little white church" into a <strong>brand new sanctuary</strong> built on the property. The original church building was preserved and continues to serve the congregation today as our fellowship hall.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative pl-8 sm:pl-16 py-6 group">
+          <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-7 before:h-full before:px-px before:bg-gray-300 before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-7 after:w-4 after:h-4 after:bg-blue-600 after:border-4 after:border-white after:rounded-full after:-translate-x-1/2 after:translate-y-1.5">
+            <time class="sm:w-28 text-xs text-gray-500 font-bold uppercase">2021 - 2022</time>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900">A New Chapter for Living Waters</h3>
+              <p class="text-gray-700">
+                In 2022, the church transitioned to its current name of <strong>Living Waters Independent Baptist Church</strong>. This change was a formal step to align our name with the Baptist doctrines and independent values that define our church family.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative pl-8 sm:pl-16 py-6 group">
+          <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-7 before:h-full before:px-px before:bg-gray-300 before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-7 after:w-4 after:h-4 after:bg-blue-600 after:border-4 after:border-white after:rounded-full after:-translate-x-1/2 after:translate-y-1.5">
+            <time class="sm:w-28 text-xs text-gray-500 font-bold uppercase">Present</time>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900">Passing the Mantle</h3>
+              <p class="text-gray-700">
+                After 18 years of faithful leadership, Ricky Sr. stepped down as pastor in 2022. By God's amazing design, the church voted to name <strong>Ricky Mullins Jr.</strong> as their new pastor, continuing the legacy of ministry in our community for the next generation.
+              </p>
+            </div>
+          </div>
+        </div>
         
-        <h3>God</h3>
-        <p>
-          We believe in one God who exists eternally in three persons: Father, Son, and Holy Spirit. Each person is fully God, yet there is one God.
-        </p>
-        
-        <h3>Jesus Christ</h3>
-        <p>
-          We believe Jesus Christ is fully God and fully human. He was born of a virgin, lived a sinless life, died on the cross as the substitute for sinners, rose bodily from the grave, and ascended to heaven where He now serves as our High Priest and Advocate.
-        </p>
-        
-        <h3>Holy Spirit</h3>
-        <p>
-          We believe the Holy Spirit convicts the world of sin, regenerates believers, indwells them, and empowers them for godly living and service.
-        </p>
-        
-        <h3>Salvation</h3>
-        <p>
-          We believe salvation is by grace alone, through faith alone, in Christ alone. Good works are the necessary fruit of true faith but are not the basis of our right standing before God.
-        </p>
-        
-        <h3>The Church</h3>
-        <p>
-          We believe the church is the body of Christ, consisting of all true believers. Its mission is to worship God, build up believers in their faith, and share the gospel with the world.
-        </p>
-        
-        <h3>The Future</h3>
-        <p>
-          We believe in the personal, visible return of Jesus Christ, the resurrection of the dead, the final judgment, and the eternal state of blessing for the righteous and punishment for the unrighteous.
-        </p>
       </div>
     </div>
   </section>

@@ -3,92 +3,56 @@ name: "Children's Ministry"
 slug: "childrens-ministry"
 logo: "/uploads/ministries/childrens-ministry-logo.webp"
 summary: "Nurturing children ages 0-12 in their faith journey through engaging, age-appropriate programs that teach God's love."
-coordinator: "Mrs. Jennifer Davis"
-contact: "children@churchname.org"
-schedule: "Sunday School: 9:15 AM | Children's Church: 10:30 AM | Wednesday Kids Club: 6:30 PM"
+coordinator: "Jason Ingles"
+contact: "children@lwibc.com"
+schedule: "Children's Church: Sunday Morning Service | Mid-Week: Wednesday Night Bible Study"
 order: 1
 draft: false
 ---
 
 ## Our Mission
 
-To partner with parents in raising children who know, love, and follow Jesus Christ. We create a safe, fun, and engaging environment where children can learn about God's love and develop a personal relationship with Him.
+At Living Waters Independent Baptist Church, our Children's Ministry exists to partner with parents in raising children who know, love, and follow Jesus Christ. We provide a safe, high-energy environment where the Word of God comes alive through age-appropriate teaching and fellowship.
 
 ## Age-Appropriate Programs
 
 ### Nursery (0-2 years)
-- Safe, loving care during services
-- Trained volunteers and security procedures
-- Age-appropriate toys and activities
-- Diaper changing and feeding assistance
+Our nursery provides a safe, loving environment during all primary services. We prioritize peace of mind for parents through trained volunteers and strict security procedures, allowing you to focus on worship.
 
-### Preschool (3-5 years)
-- Interactive Bible stories
-- Songs and movement activities
-- Simple crafts and games
-- Character-building lessons
+### Preschool & Junior Church (3-5 years)
+We introduce our preschoolers to the Great Physician and the Good Shepherd through interactive Bible stories, gospel-centered songs, and creative play that builds a foundation of faith.
 
 ### Elementary (K-5th grade)
-- Engaging Bible lessons
-- Worship and prayer time
-- Service projects
-- Scripture memorization programs
+Our elementary students dive deeper into Scripture. Through engaging lessons, worship, and Scripture memorization, we challenge our kids to not just hear the Word, but to live it out in their schools and homes.
 
-## Weekly Schedule
+## Weekly Opportunities
 
-### Sunday Programs
-- **9:15 AM**: Sunday School for all ages
-- **10:30 AM**: Children's Church (during main service)
+### Sunday Morning
+- **9:15 AM**: Sunday School (Classes grouped by age)
+- **10:30 AM**: Children's Church (Dismissed from the main sanctuary following corporate worship)
 
-### Wednesday Programs
-- **6:30 PM**: Kids Club with dinner, games, and Bible study
+### Wednesday Night
+- **7:00 PM**: Kids Bible Club (Running concurrently with our Adult Bible Study and Prayer Meeting)
 
 ## Special Events
 
-### Vacation Bible School
-Annual summer program featuring:
-- Daily Bible lessons and activities
-- Music and drama presentations
-- Crafts and games
-- Community outreach projects
+### Vacation Bible School (VBS)
+Our annual summer highlight! A week-long journey featuring daily Bible lessons, crafts, music, and games designed to reach the children of our community with the Gospel.
 
-### Children's Christmas Program
-- Annual Christmas presentation
-- Opportunity for children to participate in worship
-- Family-friendly celebration
-
-### Easter Celebration
-- Easter egg hunt
-- Resurrection story activities
-- Spring festival games
+### Children’s Christmas Program
+Every December, our children lead us in worship through a special program celebrating the birth of our Savior, Jesus Christ.
 
 ## Safety and Security
 
-We prioritize the safety of all children through:
-- Background checks for all volunteers
-- Secure check-in/check-out procedures
-- Trained staff in child protection policies
-- Clean and safe facilities
+The safety of your family is our top priority. 
+- **Background Checks:** All volunteers undergo a thorough screening process.
+- **Check-in Procedures:** We utilize a secure system to ensure children are only released to authorized guardians.
+- **Trained Staff:** Our team is trained in child protection policies and emergency procedures.
 
-## Volunteer Opportunities
+## Get Involved
 
-We need volunteers to serve as:
-- Teachers and assistants
-- Nursery workers
-- Event helpers
-- Administrative support
+If you have a heart for the next generation, we invite you to serve with us. We are always looking for teachers, assistants, and nursery workers who are passionate about the Gospel.
 
-### Requirements for Volunteers
-- Love for children and desire to serve
-- Commitment to regular attendance
-- Completion of background check
-- Participation in training sessions
+*All volunteers must be members of Living Waters Independent Baptist Church and complete a background check.*
 
-## Parent Resources
-
-- Monthly newsletters with lesson themes
-- Suggested activities for home
-- Parenting workshops and support groups
-- Family devotional materials
-
-Contact Mrs. Jennifer Davis to learn more about our children's ministry or to volunteer.
+**Contact Jason Ingles or the church office to learn more about how your child can get plugged in!**

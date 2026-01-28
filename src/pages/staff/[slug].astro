@@ -1,0 +1,91 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/Sections/PageHeader.astro";
+import Button from "../../components/UI/Button.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  try {
+    const staffEntries = await getCollection("staff", ({ data }) => {
+      return import.meta.env.PROD ? !data.draft : true;
+    });
+
+    return staffEntries.map(entry => ({
+      params: { slug: entry.slug },
+      props: { entry },
+    }));
+  } catch (error) {
+    return [];
+  }
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout
+  title={`${entry.data.name} - Our Staff`}
+  description={`Meet ${entry.data.name}, ${entry.data.title} at LWIBC.`}
+>
+  <PageHeader 
+    title={entry.data.name} 
+    subtitle={entry.data.title}
+    backgroundImage="/uploads/page-header-bg.webp"
+  />
+  
+  <section class="py-16">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2">
+          <div class="prose prose-lg max-w-none">
+            <h2 class="text-3xl font-bold mb-6">About {entry.data.name}</h2>
+            <Content />
+          </div>
+        </div>
+        
+        <div>
+          <div class="bg-gray-50 p-6 rounded-lg shadow-sm sticky top-24 border border-gray-100">
+            {entry.data.image && (
+              <div class="mb-6 overflow-hidden rounded-lg">
+                <img 
+                  src={entry.data.image} 
+                  alt={entry.data.name} 
+                  class="w-full h-auto shadow-md"
+                />
+              </div>
+            )}
+            
+            <h3 class="text-xl font-bold mb-4">Contact Information</h3>
+            
+            <div class="space-y-4 mb-6 text-gray-700">
+              {entry.data.email && (
+                <div>
+                  <h4 class="font-bold text-xs uppercase tracking-wider text-gray-400">Email</h4>
+                  <a href={`mailto:${entry.data.email}`} class="text-primary-600 hover:underline">
+                    {entry.data.email}
+                  </a>
+                </div>
+              )}
+              
+              {entry.data.phone && (
+                <div>
+                  <h4 class="font-bold text-xs uppercase tracking-wider text-gray-400">Phone</h4>
+                  <p>{entry.data.phone}</p>
+                </div>
+              )}
+            </div>
+            
+            <div class="flex flex-col space-y-3">
+              <Button href="/contact" variant="primary">
+                Send a Message
+              </Button>
+              <Button href="/staff" variant="outline">
+                Back to Staff
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
