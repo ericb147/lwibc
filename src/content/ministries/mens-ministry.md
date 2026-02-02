@@ -1,138 +1,66 @@
 ---
-name: "Men's Ministry"
+name: "Men's Ministry [DRAFT]"
 slug: "mens-ministry"
-logo: "/uploads/ministries/mens-ministry-logo.webp"
-summary: "Building strong Christian men through fellowship, discipleship, and service opportunities that strengthen faith and character."
-coordinator: "Robert Johnson"
-contact: "mens@churchname.org"
-schedule: "Men's Breakfast: 1st Saturday 8:00 AM | Bible Study: Thursday 7:00 PM"
-order: 4
+logo: "/uploads/ministries/placeholder.png"
+background: "/uploads/ministries/iron.jpg"
+summary: "Equipping men to be spiritual leaders in the home and church through the study of the King James Bible, fellowship, and diligent service."
+coordinator: "Pastor Ricky Mullins"
+contact: "mens@lwibc.com"
+schedule: "Bible and Black Coffee: 1st Saturday 7:00 AM"
+order: 2
 draft: false
 ---
 
 ## Our Purpose
 
-To develop men of character who lead with integrity, serve with humility, and live out their faith boldly in their families, workplaces, and communities.
+The Men's Ministry of Living Waters Independent Baptist Church is dedicated to the developing of "men of God" who are thoroughly furnished unto all good works. Our goal is to see men grounded in the Scriptures (KJV), leading their families with biblical authority, and serving the local church with a heart of humility.
 
 ## Core Values
 
-### Biblical Manhood
-- Understanding God's design for men
-- Developing spiritual leadership
-- Growing in wisdom and discernment
-- Living with purpose and direction
+### Scriptural Leadership
+- Following the "Old Paths" and biblical mandates for men
+- Establishing the man as the spiritual head of the home
+- Applying the King James Bible as the final authority in all matters of faith and practice
+- Maintaining a clear, separated Christian testimony
 
-### Brotherhood
-- Building authentic relationships
-- Supporting one another through challenges
-- Celebrating victories together
-- Creating accountability partnerships
+### Iron Sharpening Iron
+- Building godly friendships based on mutual faith
+- Encouragement through prayer and the Word
+- Practical accountability in a world of compromise
+- Mentoring the next generation of young men
 
-### Service
-- Using our gifts to serve others
-- Leading by example in our families
-- Contributing to church and community
-- Mentoring younger men
+### Diligent Service
+- Laboring for the Lord within the local church body
+- Leading by example in soul-winning and visitation
+- Maintaining the house of God through practical service
+- Providing for the needs of the widows and fatherless
 
 ## Regular Programs
 
-### Men's Breakfast Fellowship
-**When**: First Saturday of each month, 8:00 AM
+### Bible and Black Coffee
+**When**: First Saturday of each month, 7:00 AM
 **What**: 
-- Hearty breakfast and fellowship
-- Guest speakers on relevant topics
-- Prayer and encouragement
-- Planning for upcoming activities
+- TODO
 
-### Thursday Night Bible Study
-**When**: Every Thursday, 7:00 PM
-**What**:
-- In-depth Bible study
-- Discussion of life applications
-- Prayer for personal and family needs
-- Accountability and encouragement
 
-### Men's Retreat
-**When**: Annual weekend retreat
-**What**:
-- Intensive Bible teaching
-- Outdoor activities and recreation
-- Deep fellowship and bonding
-- Personal reflection and goal setting
+## Specific Areas of Focus
 
-## Special Events
+### The Christian Home
+- Biblical marriage according to the Scriptures
+- Disciplining children in the nurture and admonition of the Lord
+- Protecting the home from worldly influences
+- Family altar and family worship guidance
 
-### Father-Son Activities
-- Camping trips
-- Sports events
-- Service projects
-- Skill-building workshops
-
-### Community Service Projects
-- Home repairs for elderly and disabled
-- Church maintenance and improvements
-- Community cleanup initiatives
-- Disaster relief assistance
-
-### Men's Conference
-- Annual conference with guest speakers
-- Workshops on marriage, parenting, and leadership
-- Worship and prayer sessions
-- Networking with men from other churches
-
-## Small Groups
-
-### Career and Workplace
-- Navigating workplace challenges
-- Integrating faith and work
-- Professional development
-- Business ethics and integrity
-
-### Marriage and Family
-- Strengthening marriages
-- Effective parenting strategies
-- Family leadership principles
-- Work-life balance
-
-### Young Professionals
-- Career guidance and mentorship
-- Financial stewardship
-- Dating and relationships
-- Life purpose and calling
-
-## Leadership Development
-
-### Mentorship Program
-- Pairing experienced men with younger men
-- Regular meetings and guidance
-- Skill development and character building
-- Spiritual growth and accountability
-
-### Leadership Training
-- Biblical leadership principles
-- Communication and conflict resolution
-- Team building and delegation
-- Vision casting and planning
+### Stewardship and Testimony
+- Integrity in business and the workplace
+- Biblical financial stewardship and tithing
+- Personal evangelism and "being ready to give an answer"
+- Living a separated life in a modern world
 
 ## How to Get Involved
 
-1. **Attend a Men's Breakfast**: Great way to meet other men and learn about our ministry
-2. **Join a Small Group**: Find a group that fits your life stage and interests
-3. **Participate in Service Projects**: Put your faith into action
-4. **Consider Leadership**: Help lead and organize ministry activities
+1. **Join us for the Bible and Black Coffee**: The best way to get plugged in is to attend our monthly Saturday fellowship.
+2. **Be a Mentor**: Experienced men are encouraged to invest in our young men and boys.
 
-## Upcoming Events
 
-- **March 2**: Men's Breakfast - "Leading with Courage"
-- **March 15**: Community Outreach Day participation
-- **April 12-14**: Annual Men's Retreat at Pine Lake
-- **May 4**: Father-Son Fishing Tournament
-
-## Resources
-
-- Recommended reading list
-- Marriage and parenting resources
-- Financial planning guidance
-- Career development materials
-
-Contact Robert Johnson to learn more about Men's Ministry or to get connected with a small group.
+Contact Pastor Ricky to learn more about the Men's Ministry.

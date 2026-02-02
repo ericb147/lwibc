@@ -54,6 +54,7 @@ const ministriesCollection = defineCollection({
   schema: z.object({
     name: z.string(),
     logo: z.string().startsWith('/uploads/ministries/').optional(),
+    background: z.string().startsWith('/uploads/ministries/').optional(),
     summary: z.string(),
     coordinator: z.string().optional(),
     contact: z.string().optional(), // Email or text

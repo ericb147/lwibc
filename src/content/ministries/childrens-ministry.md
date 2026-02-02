@@ -1,7 +1,7 @@
 ---
-name: "Children's Ministry"
+name: "Children's Ministry [DRAFT]"
 slug: "childrens-ministry"
-logo: "/uploads/ministries/childrens-ministry-logo.webp"
+logo: "/uploads/ministries/placeholder.png"
 summary: "Nurturing children ages 0-12 in their faith journey through engaging, age-appropriate programs that teach God's love."
 coordinator: "Jason Ingles"
 contact: "children@lwibc.com"
