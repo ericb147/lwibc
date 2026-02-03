@@ -15,6 +15,7 @@ export interface Props {
   author?: string;
   tags?: string[];
   type?: "sermon" | "event" | "blog" | "ministry";
+  videoUrl?: string;
 }
 
 const {
@@ -25,6 +26,7 @@ const {
   author,
   tags = [],
   type = "blog",
+  videoUrl,
 } = Astro.props;
 
 const seoType = "article";
@@ -48,7 +50,17 @@ const formattedDate = date ? formatDate(date) : null;
 <main class="container py-8">
   <div class="mx-auto max-w-3xl">
 
-    {image && (
+    {videoUrl ? (
+      <div class="mb-8 overflow-hidden rounded-lg shadow-lg" style="aspect-ratio: 16 / 9;">
+    <iframe
+      src={videoUrl}
+      title={title}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      class="w-full h-full"
+    ></iframe>
+  </div>
+    ) : image && (
       <div class="mb-8 overflow-hidden rounded-lg">
         <img
           src={image.url}

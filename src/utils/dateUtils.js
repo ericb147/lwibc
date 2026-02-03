@@ -1,18 +1,28 @@
-import { format, parseISO } from "date-fns";
+import { parseISO } from "date-fns";
 
 /**
  * Format a date in a human-readable format
+ * Fixes the "Day Rollover" issue by forcing UTC timezone display.
  * @param {Date|string} date The date to format
- * @param {string} formatStr The format string (default: 'MMMM d, yyyy')
- * @returns {string} The formatted date
+ * @param {string} formatStr Note: Native Intl is used here, formatStr is kept for compatibility
+ * @returns {string} The formatted date (e.g., "January 18, 2026")
  */
-export function formatDate(date, formatStr = "MMMM d, yyyy") {
+export function formatDate(date) {
   if (!date) return "";
-  
-  // If date is a string, parse it
+
+  // 1. Convert everything to a Date object
+  // Astro Content Collections usually pass a Date object, 
+  // but we handle strings just in case.
   const dateObj = typeof date === "string" ? parseISO(date) : date;
-  
-  return format(dateObj, formatStr);
+
+  // 2. Use the Internationalization API to force UTC.
+  // This prevents the system from subtracting hours based on local timezones.
+  return new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC', 
+  }).format(dateObj);
 }
 
 /**
@@ -22,10 +32,7 @@ export function formatDate(date, formatStr = "MMMM d, yyyy") {
  */
 export function isFutureDate(date) {
   if (!date) return false;
-  
-  // If date is a string, parse it
   const dateObj = typeof date === "string" ? parseISO(date) : date;
-  
   return dateObj > new Date();
 }
 
@@ -36,9 +43,6 @@ export function isFutureDate(date) {
  */
 export function isPastDate(date) {
   if (!date) return false;
-  
-  // If date is a string, parse it
   const dateObj = typeof date === "string" ? parseISO(date) : date;
-  
   return dateObj < new Date();
 }

@@ -8,12 +8,12 @@ export interface Props {
 const { 
   title, 
   subtitle, 
-  backgroundImage = "/uploads/page-header-bg.webp" 
+  backgroundImage = "/uploads/bible.jpg" 
 } = Astro.props;
 ---
 
 <section 
-  class="relative py-20 bg-cover bg-center"
+  class="relative py-12 bg-cover bg-center"
   style={`background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${backgroundImage})`}
 >
   <div class="container">

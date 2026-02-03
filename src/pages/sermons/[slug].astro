@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PostLayout from "../../layouts/PostLayout.astro";
+import PageHeader from "../../components/Sections/PageHeader.astro";
 import Button from "../../components/UI/Button.astro";
 import { getCollection } from "astro:content";
 import { formatDate } from "../../utils/dateUtils";
@@ -50,7 +51,7 @@ if (entry.data.series) {
 ---
 
 <BaseLayout
-  title={`${entry.data.title} - Sermons - Church Name`}
+  title={`${entry.data.title} - Sermons - Living Waters Independent Baptist Church`}
   description={entry.data.summary || `Listen to "${entry.data.title}" by ${entry.data.speaker}`}
   image={entry.data.image ? { url: entry.data.image, alt: entry.data.title } : undefined}
   type="article"
@@ -63,6 +64,7 @@ if (entry.data.series) {
     author={entry.data.speaker}
     tags={entry.data.tags}
     type="sermon"
+    videoUrl={entry.data.videoUrl}
   >
     <!-- Sermon Details -->
     <div class="bg-gray-50 rounded-lg p-6 mb-8">
@@ -121,45 +123,15 @@ if (entry.data.series) {
       </div>
     </div>
     
-    <!-- Media Players -->
-    <div class="mb-8 space-y-6">
-      {
-        entry.data.videoUrl && (
-          <div>
-            <h3 class="text-xl font-bold mb-4">Watch</h3>
-            <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-              <iframe 
-                src={entry.data.videoUrl} 
-                title={entry.data.title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen
-                class="w-full h-full"
-              ></iframe>
-            </div>
-          </div>
-        )
-      }
-      
-      {
-        entry.data.audioUrl && (
-          <div>
-            <h3 class="text-xl font-bold mb-4">Listen</h3>
-            <audio controls class="w-full">
-              <source src={entry.data.audioUrl} type="audio/mpeg">
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-        )
-      }
-    </div>
+    <!-- Media Players removed: video now shown in header image area -->
     
-    <!-- Sermon Content -->
+    <!-- Sermon Content
     <article class="prose prose-lg max-w-none prose-headings:text-gray-900 prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-h4:text-lg prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900 prose-a:text-primary-600 hover:prose-a:text-primary-700">
       <Content />
     </article>
-    
+     -->
     <!-- Related Sermons -->
-    {
+    <!-- {
       relatedSermons.length > 0 && (
         <div class="mt-12">
           <h2 class="text-2xl font-bold mb-6">More From This Series</h2>
@@ -174,7 +146,7 @@ if (entry.data.series) {
           </div>
         </div>
       )
-    }
+    } -->
     
     <!-- Action Buttons -->
     <div class="mt-12 flex flex-wrap gap-4">

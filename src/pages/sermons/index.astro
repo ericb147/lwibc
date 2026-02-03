@@ -18,15 +18,27 @@ const sermons = allSermons.sort((a, b) =>
 // Get unique series and speakers for filters
 const series = [...new Set(sermons.map(sermon => sermon.data.series).filter(Boolean))];
 const speakers = [...new Set(sermons.map(sermon => sermon.data.speaker))];
+
+// Helper to extract YouTube video ID from URL
+// Helper to extract YouTube video ID from any format
+function getYouTubeId(url) {
+  if (!url) return null;
+  
+  // Regex covers: watch?v=, youtu.be/, embed/, and watch/
+  const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i;
+  const match = url.match(regex);
+  
+  return (match && match[1]) ? match[1] : null;
+}
 ---
 
 <BaseLayout
-  title="Sermons - Church Name"
+  title="Sermons - Living Waters Independent Baptist Church"
   description="Listen to or watch our latest sermons. Explore our sermon archive to grow in your faith and understanding of God's Word."
 >
   <PageHeader 
     title="Sermons" 
-    subtitle="Listen to or watch our latest messages"
+    subtitle="Watch our latest messages"
     backgroundImage="/uploads/sermons-header-bg.webp"
   />
   
@@ -128,7 +140,9 @@ const speakers = [...new Set(sermons.map(sermon => sermon.data.speaker))];
               <Card
                 title={sermon.data.title}
                 image={{
-                  src: sermon.data.image || "/uploads/sermon-placeholder.webp",
+                  src: (sermon.data.videoUrl && getYouTubeId(sermon.data.videoUrl))
+                    ? `https://img.youtube.com/vi/${getYouTubeId(sermon.data.videoUrl)}/maxresdefault.jpg` 
+                    : (sermon.data.image || "/uploads/sermon-placeholder.webp"),
                   alt: sermon.data.title
                 }}
                 href={`/sermons/${sermon.slug}`}
@@ -172,7 +186,7 @@ const speakers = [...new Set(sermons.map(sermon => sermon.data.speaker))];
                 <p class="text-gray-700 mb-4">{sermon.data.summary}</p>
 
                 <p class="text-primary-600 font-medium group-hover:underline group-hover:text-primary-700">
-                  Listen/Watch →
+                  Watch →
                 </p>
               </Card>
             ))}

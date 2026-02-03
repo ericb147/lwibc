@@ -1,57 +1,59 @@
 ---
-name: "Children's Ministry [DRAFT]"
+name: "Children's Ministry"
 slug: "childrens-ministry"
 logo: "/uploads/ministries/placeholder.png"
-summary: "Nurturing children ages 0-12 in their faith journey through engaging, age-appropriate programs that teach God's love."
+summary: "Training up children in the way they should go through the faithful teaching of the King James Bible."
 coordinator: "Jason Ingles"
 contact: "children@lwibc.com"
-schedule: "Children's Church: Sunday Morning Service | Mid-Week: Wednesday Night Bible Study"
+schedule: "Children's Church: Sunday Morning | Wednesday Night"
 order: 1
 draft: false
 ---
 
 ## Our Mission
 
-At Living Waters Independent Baptist Church, our Children's Ministry exists to partner with parents in raising children who know, love, and follow Jesus Christ. We provide a safe, high-energy environment where the Word of God comes alive through age-appropriate teaching and fellowship.
+At Living Waters Independent Baptist Church, our Children's Ministry exists to partner with parents in "training up a child in the way he should go." We provide a safe, reverent, and engaging environment where the Word of God is taught clearly from the King James Bible, helping children build a strong foundation for their faith.
 
-## Age-Appropriate Programs
+## Our Classes
 
-### Nursery (0-2 years)
-Our nursery provides a safe, loving environment during all primary services. We prioritize peace of mind for parents through trained volunteers and strict security procedures, allowing you to focus on worship.
+### Nursery & Nursing Mother’s Room
+We provide a clean, quiet nursery and a private room for nursing mothers. For your convenience, both spaces are equipped with a live audio feed of the service, allowing you to care for your little ones without missing the preaching of God's Word.
 
-### Preschool & Junior Church (3-5 years)
-We introduce our preschoolers to the Great Physician and the Good Shepherd through interactive Bible stories, gospel-centered songs, and creative play that builds a foundation of faith.
+### Children’s Church (All Ages Above Nursery)
+Our Children’s Church provides a specialized environment for children to learn at their level during our main services. 
 
-### Elementary (K-5th grade)
-Our elementary students dive deeper into Scripture. Through engaging lessons, worship, and Scripture memorization, we challenge our kids to not just hear the Word, but to live it out in their schools and homes.
+* **Biblical Teaching:** We focus on grounding the next generation in the Scriptures. Through Bible lessons, traditional hymns, and Scripture memorization, children are taught the fundamental truths of the Word of God.
+* **Secure & Private:** Your child’s safety is our priority. Classes are held in a private, secure area of our facility and are led by our Ministry Coordinator and a team of dedicated, background-checked volunteers.
+* **Practical Application:** We challenge our students not just to hear the Word, but to live it out—encouraging them to walk with the Lord and be a light for Christ in their homes and schools.
 
 ## Weekly Opportunities
 
 ### Sunday Morning
-- **9:15 AM**: Sunday School (Classes grouped by age)
-- **10:30 AM**: Children's Church (Dismissed from the main sanctuary following corporate worship)
+- **11:00 AM**: Children's Church (Children are dismissed to their class from the main sanctuary)
 
 ### Wednesday Night
-- **7:00 PM**: Kids Bible Club (Running concurrently with our Adult Bible Study and Prayer Meeting)
+- **7:00 PM**: Kids Bible Club (Bible study and activities running concurrently with the Adult Prayer Meeting)
 
 ## Special Events
 
-### Vacation Bible School (VBS)
-Our annual summer highlight! A week-long journey featuring daily Bible lessons, crafts, music, and games designed to reach the children of our community with the Gospel.
+### Christ, Advice, and a Slice
+A monthly fellowship where Jason provides pizza and a Bible-centered message. This casual Q&A session allows our youth to ask honest questions and receive sound "Christ-centered advice" rooted in the King James Scriptures. It is a vital time for building godly friendships and finding biblical answers to life's challenges.
 
 ### Children’s Christmas Program
-Every December, our children lead us in worship through a special program celebrating the birth of our Savior, Jesus Christ.
+Each December, our children lead the congregation in celebrating the birth of our Savior through the singing of traditional carols.
+
+### Special Children’s Service
+Periodically, our children take an active role in the service to learn the importance of serving in the house of God. From assisting with ushering and opening prayer to providing special music, the children participate in the order of service before Jason brings a clear, Gospel-focused message specifically prepared for them.
 
 ## Safety and Security
 
 The safety of your family is our top priority. 
-- **Background Checks:** All volunteers undergo a thorough screening process.
-- **Check-in Procedures:** We utilize a secure system to ensure children are only released to authorized guardians.
-- **Trained Staff:** Our team is trained in child protection policies and emergency procedures.
+- **Background Checks:** All volunteers undergo a thorough screening and background check.
+- **Trained Volunteers:** Our team is committed to maintaining a safe, supervised, and wholesome environment for every child.
 
 ## Get Involved
 
-If you have a heart for the next generation, we invite you to serve with us. We are always looking for teachers, assistants, and nursery workers who are passionate about the Gospel.
+If you have a heart for the next generation, we invite you to serve with us. We are always looking for teachers, assistants, and nursery workers who are dedicated to the Lord's work.
 
 *All volunteers must be members of Living Waters Independent Baptist Church and complete a background check.*
 
