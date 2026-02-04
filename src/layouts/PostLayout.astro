@@ -61,14 +61,15 @@ const formattedDate = date ? formatDate(date) : null;
     ></iframe>
   </div>
     ) : image && (
-      <div class="mb-8 overflow-hidden rounded-lg">
-        <img
-          src={image.url}
-          alt={image.alt}
-          class="object-cover w-full h-64 md:h-96"
-          widths={[320, 640, 1024]}
-          format="webp"
-          loading="lazy" />
+      <div class="mb-8 flex justify-center">
+        <div class="overflow-hidden rounded-lg shadow-sm w-full max-w-sm md:max-w-md">
+          <img
+            src={image.url}
+            alt={image.alt}
+            class="w-full h-auto block"
+            loading="lazy" 
+          />
+        </div>
       </div>
     )}
 
