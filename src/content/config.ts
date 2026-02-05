@@ -22,6 +22,7 @@ const eventsCollection = defineCollection({
     endDate: z.date().optional(), // Event end date
     time: z.string().optional(), // e.g., "09:00 AM - 11:00 AM"
     location: z.string(),
+    address: z.string().optional(),
     image: z.string().startsWith('/uploads/events/'),
     summary: z.string(),
     tags: z.array(z.string()).optional(),
