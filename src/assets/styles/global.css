@@ -71,13 +71,17 @@
     @apply overflow-hidden transition-all bg-white rounded-lg shadow-md hover:shadow-lg;
   }
   .map-wrapper {
-    @apply card relative w-full overflow-hidden;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    height: 0;
+    @apply card relative w-full h-full;
+    min-height: 300px; /* Makes it tall on mobile */
   }
-
+  @media (min-width: 768px) {
+    .map-wrapper {
+      min-height: 0; /* Let it stretch on desktop */
+    }
+  }
   .map-wrapper iframe {
     @apply absolute top-0 left-0 w-full h-full border-0;
+    height: 100%;
   }
 }
 
