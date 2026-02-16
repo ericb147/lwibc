@@ -38,9 +38,13 @@ The Men's Ministry of Living Waters Independent Baptist Church is dedicated to t
 ## Regular Programs
 
 ### Bible and Black Coffee
-**When**: First Saturday of each month, 7:00 AM
+**When**: Second Saturday of each month, 7:00 AM  
 **What**: 
-- TODO
+- Examine what it means to be a Godly man
+- Examine biblical masculinity in an increasingly feminized world
+
+**Where**:
+Fellowship Hall (CLEAN THIS UP)
 
 
 ## Specific Areas of Focus

@@ -21,7 +21,7 @@ Pastor Ricky is known for holding true to old-time preaching and singing. His mi
 - Evangelism and community outreach
 - Pastoral theology and leadership
 - Traditional music ministry
-- Discipleship and Sunday School oversight
+- Discipleship and church administration oversight
 
 ## Education
 
