@@ -5,14 +5,15 @@ import Button from "../components/UI/Button.astro";
 ---
 
 <BaseLayout
-  title="I'm New - Church Name"
+  title="I'm New - Living Waters Independent Baptist Church"
   description="Everything you need to know about visiting our church for the first time. Find service times, what to expect, and how to get connected."
 >
   <PageHeader 
     title="I'm New Here" 
     subtitle="Welcome! We're glad you're considering a visit."
-    backgroundImage="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&h=600&fit=crop&crop=center"
+    backgroundImage="/uploads/im-new.jpg"
   />
+
   
   <!-- What to Expect -->
   <section class="py-16">
@@ -33,7 +34,7 @@ import Button from "../components/UI/Button.astro";
           </div>
           <h3 class="text-xl font-bold mb-3">Service Length</h3>
           <p class="text-gray-700">
-            Our services typically last about 75 minutes, including worship, announcements, and the sermon.
+            Our services typically last about 1 hour, including worship, announcements, and the sermon.
           </p>
         </div>
         
@@ -45,7 +46,7 @@ import Button from "../components/UI/Button.astro";
           </div>
           <h3 class="text-xl font-bold mb-3">Worship Style</h3>
           <p class="text-gray-700">
-            Our worship blends contemporary and traditional elements. We sing both modern worship songs and classic hymns.
+            We feature traditional hymns led by piano, guitar, and bass, along with featured special music.
           </p>
         </div>
         
@@ -55,9 +56,9 @@ import Button from "../components/UI/Button.astro";
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold mb-3">Teaching Style</h3>
+          <h3 class="text-xl font-bold mb-3">Preaching Style</h3>
           <p class="text-gray-700">
-            Our messages are biblically-based, practical, and applicable to everyday life. We focus on how Scripture speaks to our current challenges.
+            Sunday morning services feature old-fashioned preaching from the King James Bible. Wednesday night services are more of a group Bible study format where we discuss the text together.
           </p>
         </div>
       </div>
@@ -70,7 +71,7 @@ import Button from "../components/UI/Button.astro";
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
           <img 
-            src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800&h=600&fit=crop&crop=center" 
+            src="uploads/church_dress.avif" 
             alt="Casual church attire" 
             class="rounded-lg shadow-lg object-cover w-full h-full"
           />
@@ -101,33 +102,25 @@ import Button from "../components/UI/Button.astro";
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         <div class="bg-white p-8 rounded-lg shadow-sm">
-          <h3 class="text-xl font-bold mb-3">Sunday Morning</h3>
+          <h3 class="text-xl font-bold mb-3">Sunday Morning Service</h3>
           <div class="mb-4">
-            <p class="text-2xl font-bold text-primary-600 mb-2">8:00 AM</p>
-            <p class="text-gray-600">Traditional Service</p>
-            <p class="italic text-gray-500 mt-2">In-person & Livestream</p>
+            <p class="text-2xl font-bold text-primary-600 mb-2">11:00 AM</p>
+            <p class="text-gray-600">Traditional preaching service from the King James Bible. This service is more of a "camp meeting" type of atmosphere.</p>
+            <p class="italic text-gray-500 mt-2">In-person & YouTube video</p>
           </div>
           
-          <div>
-            <p class="text-2xl font-bold text-primary-600 mb-2">10:30 AM</p>
-            <p class="text-gray-600">Contemporary Service with Children's Ministry</p>
-            <p class="italic text-gray-500 mt-2">In-person only</p>
-          </div>
+          
         </div>
         
         <div class="bg-white p-8 rounded-lg shadow-sm">
-          <h3 class="text-xl font-bold mb-3">Wednesday Evening</h3>
+          <h3 class="text-xl font-bold mb-3">Wednesday Night Bible Study</h3>
           <div class="mb-4">
             <p class="text-2xl font-bold text-primary-600 mb-2">7:00 PM</p>
-            <p class="text-gray-600">Mid-week Prayer & Bible Study</p>
-            <p class="italic text-gray-500 mt-2">In-person & Livestream</p>
-          </div>
-          
-          <div>
-            <p class="text-2xl font-bold text-primary-600 mb-2">7:00 PM</p>
-            <p class="text-gray-600">Youth Group (Grades 6-12)</p>
+            <p class="text-gray-600">In this service we move through a specific text together and exposit and discuss the Word of God together.</p>
             <p class="italic text-gray-500 mt-2">In-person only</p>
           </div>
+          
+          
         </div>
       </div>
     </div>
@@ -149,7 +142,7 @@ import Button from "../components/UI/Button.astro";
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
               <span class="text-gray-700">
-                <strong>Nursery (0-2 years):</strong> Safe, loving care for our littlest ones during all services.
+                <strong>Nursery:</strong> We provide a clean, quiet nursery and a private room for nursing mothers. For your convenience, both spaces are equipped with a live audio feed of the service, allowing you to care for your little ones without missing the preaching of God's Word.
               </span>
             </li>
             <li class="flex items-start">
@@ -157,15 +150,7 @@ import Button from "../components/UI/Button.astro";
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
               <span class="text-gray-700">
-                <strong>Preschool (3-5 years):</strong> Age-appropriate activities, Bible stories, and fun during the 10:30 AM service.
-              </span>
-            </li>
-            <li class="flex items-start">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span class="text-gray-700">
-                <strong>Elementary (K-5th grade):</strong> Interactive lessons, games, and worship during the 10:30 AM service.
+                <strong>Children's Church (All Ages Above Nursery):</strong> Our Children's Church provides a specialized environment for children to learn at their level during our main services. 
               </span>
             </li>
           </ul>
@@ -181,7 +166,7 @@ import Button from "../components/UI/Button.astro";
         
         <div>
           <img 
-            src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&h=600&fit=crop&crop=center" 
+            src="/uploads/CMB_6447.webp" 
             alt="Children at our church" 
             class="rounded-lg shadow-lg object-cover w-full h-full"
           />
@@ -191,54 +176,47 @@ import Button from "../components/UI/Button.astro";
   </section>
   
   <!-- Location & Directions -->
-  <section id="location" class="py-16">
+  <section class="py-16 bg-gray-50">
     <div class="container">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">Location & Directions</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          We're easy to find and have plenty of parking
-        </p>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <div class="bg-gray-200 rounded-lg overflow-hidden h-96">
-            <!-- Placeholder for Google Maps iframe -->
-            <div class="w-full h-full flex items-center justify-center bg-gray-300">
-              <p class="text-gray-600 text-center p-4">
-                Google Maps embed would go here<br>
-                <span class="text-sm">(For privacy reasons, not included in the template)</span>
-              </p>
-            </div>
-          </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        <div class="map-wrapper shadow-md h-full">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3185.499213577961!2d-82.51908692377022!3d37.02174175517928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885ab55df0eb69a3%3A0x1a713edb43f314b8!2sLiving%20Waters%20Independent%20Baptist%20Church!5e0!3m2!1sen!2sus!4v1770324991652!5m2!1sen!2sus" 
+            width="600" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
         
-        <div>
-          <div class="bg-white p-8 rounded-lg shadow-sm h-full">
-            <h3 class="text-xl font-bold mb-4">Church Address</h3>
+        <div class="h-full">
+          <div class="bg-white p-8 rounded-lg shadow-md h-full">
+            
+           <h3 class="text-xl font-bold mb-4">Church Address</h3>
             <address class="not-italic mb-6 text-gray-700">
-              <p class="text-lg">123 Main Street</p>
-              <p class="text-lg">Anytown, ST 12345</p>
-              <p class="mt-2">
-                <a href="tel:+15551234567" class="text-primary-600 hover:text-primary-700">
-                  (555) 123-4567
-                </a>
-              </p>
+              <p class="text-lg">7561 Duncan Gap Rd.</p>
+              <p class="text-lg">Wise, VA 24293</p>
             </address>
+            <p class="text-gray-700 mb-6">
+              We are located about 10 minutes from downtown Wise. Upon arrival, you will see our "Living Waters Independent Baptist Church" sign in the church yard. 
+            </p>
             
             <h4 class="text-lg font-bold mb-2">Parking Information</h4>
             <p class="text-gray-700 mb-6">
-              We have a large parking lot on the north side of the building with designated visitor parking near the main entrance. Handicap parking is available near both the north and south entrances.
+              We have plenty of gravel parking beside the church. You are welcome to drive up to the front door to drop off your passengers under the awning.
             </p>
+                        
+              <Button href="https://maps.google.com/?q=Living+Waters+Independent+Baptist+Church/@37.0217375,-82.5190869,17z" target="_blank" variant="primary">
+                Get Directions
+              </Button>
             
-            <h4 class="text-lg font-bold mb-2">Public Transportation</h4>
-            <p class="text-gray-700 mb-6">
-              Bus lines 10 and 14 stop directly in front of our building. The nearest subway station is Central Station, a 10-minute walk from our church.
-            </p>
-            
-            <Button href="https://maps.google.com/?q=123+Main+Street,+Anytown,+ST+12345" target="_blank" variant="primary">
-              Get Directions
-            </Button>
+
+            </div>
           </div>
         </div>
       </div>
@@ -265,7 +243,7 @@ import Button from "../components/UI/Button.astro";
             </svg>
           </summary>
           <p class="mt-4 text-gray-700">
-            Park. Door greeters. Find seat anywhere.
+            Upon arrival, you'll be greeted by our friendly door greeters who will welcome you and answer any questions you may have. Feel free to find a seat anywhere in the sanctuary - we want you to feel at home!
           </p>
         </details>
 
@@ -277,21 +255,9 @@ import Button from "../components/UI/Button.astro";
             </svg>
           </summary>
           <p class="mt-4 text-gray-700">
-            No, we won't single you out or ask you to stand up. We want you to feel comfortable, not put on the spot. We do have a welcome card in the service bulletin if you'd like to share your information with us.
+            No, we won't single you out or ask you to stand up. We want you to feel comfortable, not put on the spot. We do have a welcome card you can fill out if you'd like to share your information with us.
           </p>
         </details>
-
-        <!-- <details class="group bg-white p-6 rounded-lg shadow-sm">
-          <summary class="flex justify-between items-center cursor-pointer">
-            <h3 class="text-xl font-bold">Is there a coffee hour or fellowship time?</h3>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform transition-transform duration-200 group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-            </svg>
-          </summary>
-          <p class="mt-4 text-gray-700">
-            Yes! We have coffee, tea, and light refreshments available before and after each service in our fellowship hall. It's a great opportunity to meet people and ask any questions you might have.
-          </p>
-        </details> -->
 
         <details class="group bg-white p-6 rounded-lg shadow-sm">
           <summary class="flex justify-between items-center cursor-pointer">
@@ -329,7 +295,7 @@ import Button from "../components/UI/Button.astro";
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Visit?</h2>
         <p class="text-xl mb-8">
-          We look forward to meeting you this Sunday. If you have any questions before your visit, please don't hesitate to contact us.
+          We look forward to meeting you. If you have any questions before your visit, please don't hesitate to contact us.
         </p>
         
         <div class="flex flex-wrap justify-center gap-4">
@@ -337,7 +303,7 @@ import Button from "../components/UI/Button.astro";
             Contact Us
           </Button>
           
-          <Button href="https://maps.google.com/?q=123+Main+Street,+Anytown,+ST+12345" target="_blank" variant="outline" size="lg" class="bg-white/10 text-white border-white hover:bg-white hover:text-gray-900 backdrop-blur-sm">
+          <Button href="https://maps.google.com/?q=Living+Waters+Independent+Baptist+Church/@37.0217375,-82.5190869,17z" target="_blank" variant="outline" size="lg" class="bg-white/10 text-white border-white hover:bg-white hover:text-gray-900 backdrop-blur-sm">
             Get Directions
           </Button>
         </div>

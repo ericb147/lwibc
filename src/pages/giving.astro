@@ -113,16 +113,24 @@ import Button from "../components/UI/Button.astro";
     <div class="container">
       <div class="max-w-3xl mx-auto">
         <div class="bg-white p-8 rounded-lg shadow-md">
-          <h2 class="text-3xl font-bold mb-6 text-center">Online Giving</h2>
           
           <div class="mb-8">
-            <h3 class="text-xl font-bold mb-4">Give via Credit/Debit Card</h3>
-            <div class="bg-gray-50 p-6 rounded-lg text-center">
-              <!-- Placeholder for payment button -->
-              <p class="text-gray-700 mb-4">Click the button below to make a secure donation via credit or debit card.</p>
-              <Button href="https://example.com/donate" target="_blank" variant="primary">
-                Donate Now
-              </Button>
+            <h3 class="text-xl font-bold mb-4">Online Giving</h3>
+            <div class="bg-gray-50 p-6 rounded-lg">
+                         <p class="text-gray-700 mb-4">Click the button below to make a secure donation via credit or debit card.</p>
+            
+            <button 
+              class="tithely-give-btn btn btn-primary px-12 py-4 text-lg flex items-center justify-center mx-auto block" 
+              style="cursor: pointer;" 
+              data-church-id="5931179">
+              Give Online
+            </button>
+
+            <script is:inline src="https://tithe.ly/widget/v3/give.js?3"></script>
+            <script is:inline>
+              // This ensures the function runs after the script above loads
+              var tw = create_tithely_widget();
+            </script>
             </div>
           </div>
           

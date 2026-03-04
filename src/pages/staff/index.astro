@@ -40,11 +40,11 @@ const staff = all.sort((a, b) =>
             class="bg-white rounded-lg shadow flex flex-col overflow-hidden hover:shadow-lg transition min-h-[370px]"
           >
             {member.data.image && (
-              <div class="w-full h-[250px] overflow-hidden">
+              <div class="w-full aspect-square overflow-hidden">
                 <img
                   src={member.data.image}
                   alt={member.data.name}
-                  class="w-full h-full object-cover"
+                  class="w-full h-full object-cover object-center"
                 />
               </div>
             )}

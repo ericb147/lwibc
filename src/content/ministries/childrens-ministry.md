@@ -1,7 +1,7 @@
 ---
 name: "Children's Ministry"
 slug: "childrens-ministry"
-logo: "/uploads/ministries/placeholder.png"
+logo: "/uploads/ministries/children.webp"
 summary: "Training up children in the way they should go through the faithful teaching of the King James Bible."
 coordinator: "Jason Ingles"
 contact: "children@lwibc.com"

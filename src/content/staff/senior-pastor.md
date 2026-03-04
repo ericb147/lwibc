@@ -1,8 +1,8 @@
 ---
 name: "Dr. Ricky Mullins"
 title: "Senior Pastor"
-image: "/uploads/staff/ricky-mullins.jpg"
-email: "pastor@lwibc.com"
+image: "/uploads/staff/pastor.webp"
+email: "RDMinistries2021@gmail.com"
 # phone: "+1-276-xxx-xxxx"
 bio: "Dr. Ricky Mullins is a southwest Virginia native with over 20 years of ministry experience, dedicated to old-time preaching and biblical theology."
 order: 1

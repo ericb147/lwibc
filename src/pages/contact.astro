@@ -90,12 +90,19 @@ import Button from "../components/UI/Button.astro";
               </Button>
             </div>
           </form>
-          
           <script>
+            // Auto-select 'Prayer Request' if #prayer is in the URL
+            window.addEventListener('DOMContentLoaded', function() {
+              if (window.location.hash === '#prayer') {
+                const subjectSelect = document.getElementById('subject');
+                if (subjectSelect) {
+                  subjectSelect.value = 'Prayer Request';
+                }
+              }
+            });
             // Handle form submission
             document.getElementById('contact-form')?.addEventListener('submit', function(e) {
               e.preventDefault();
-              
               // In a real implementation, you would handle the form submission here
               // For this template, we'll just show a success message
               alert('Thank you for your message! We will get back to you soon.');
@@ -266,7 +273,7 @@ import Button from "../components/UI/Button.astro";
   </section>
   
   <!-- Staff Contact -->
-  <section id="prayer" class="py-16">
+  <!-- <section id="prayer" class="py-16">
     <div class="container">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">Ministry Contacts</h2>
@@ -367,10 +374,10 @@ import Button from "../components/UI/Button.astro";
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   
   <!-- Newsletter Signup -->
-  <section id="newsletter" class="py-16 bg-primary-50">
+  <!-- <section id="newsletter" class="py-16 bg-primary-50">
     <div class="container">
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h2>
@@ -410,5 +417,5 @@ import Button from "../components/UI/Button.astro";
         </script>
       </div>
     </div>
-  </section>
+  </section> -->
 </BaseLayout>
