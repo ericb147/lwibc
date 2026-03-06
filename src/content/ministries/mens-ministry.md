@@ -1,12 +1,12 @@
 ---
-name: "Men's Ministry [DRAFT]"
+name: "Men's Ministry"
 slug: "mens-ministry"
-logo: "/uploads/ministries/placeholder.png"
+logo: "/uploads/ministries/mens-ministry.png"
 background: "/uploads/ministries/iron.jpg"
 summary: "Equipping men to be spiritual leaders in the home and church through the study of the King James Bible, fellowship, and diligent service."
 coordinator: "Pastor Ricky Mullins"
-contact: "mens@lwibc.com"
-schedule: "Bible and Black Coffee: 1st Saturday 7:00 AM"
+contact: "RDMinistries2021@gmail.com"
+schedule: "Bible and Black Coffee: 2nd Saturday 7:00 AM"
 order: 2
 draft: false
 ---
@@ -44,7 +44,7 @@ The Men's Ministry of Living Waters Independent Baptist Church is dedicated to t
 - Examine biblical masculinity in an increasingly feminized world
 
 **Where**:
-Fellowship Hall (CLEAN THIS UP)
+Fellowship Hall
 
 
 ## Specific Areas of Focus

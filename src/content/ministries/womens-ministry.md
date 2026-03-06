@@ -4,8 +4,8 @@ slug: "womens-ministry"
 logo: "/uploads/ministries/placeholder.png"
 summary: "Empowering women to grow in faith, build meaningful relationships, and serve God with their unique gifts and calling."
 coordinator: "Brooke Mullins"
-contact: "brooke@lwibc.com"
-schedule: "Womens Fellowship: Fourth Friday of each month, 7:00 PM"
+contact: "RDMinistries2021@gmail.com"
+schedule: "Women's Fellowship: Fourth Friday of each month, 7:00 PM"
 order: 3
 draft: false
 ---
