@@ -1,11 +1,23 @@
-# maucariapacom-church-starter [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 
-An open-source starter template for building high-performance, content-driven church websites with Astro. Pure SSG, SEO-ready, built with Tailwind CSS, Markdown content, ready to integrate with any CMS
+# Living Waters Independent Baptist Church Website
 
-## Demo and Screenshot
-![Home Page](https://imgs.maucariapa.com/uploads/452546054-84337aa6-eea8-4879-9461-d2e7d3665aee.png)
+This is the official website for Living Waters Independent Baptist Church, Wise, VA. Built with Astro, Tailwind CSS, and Markdown content collections for a fast, modern, and content-driven church website.
 
-Demo URL: [https://maucariapacom-church-starter.pages.dev](https://maucariapacom-church-starter.pages.dev/)
+**Website:** [https://lwibc.com](https://lwibc.com)
+
+**Address:** 7561 Duncan Gap Rd., Wise, VA 24293
+
+**Contact:** RDMinistries2021@gmail.com
+
+**YouTube:** [LivingWatersIndependentBaptist](https://www.youtube.com/@LivingWatersIndependentBaptist)
+
+---
+
+
+## Screenshot
+![Home Page](/uploads/church-building.jpeg)
+
+---
 
 ## Features
 
@@ -311,4 +323,8 @@ Love our work?
 
 ---
 
-Created with ❤️ for church communities worldwide
+---
+
+Created with ❤️ for the Living Waters Independent Baptist Church community, Wise, VA.
+
+For questions, issues, or contributions, please contact the church office or visit our website.
