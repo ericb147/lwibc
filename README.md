@@ -15,7 +15,7 @@ This is the official website for Living Waters Independent Baptist Church, Wise,
 
 
 ## Screenshot
-![Home Page](/uploads/homepage.png)
+![Home Page](public/uploads/homepage.png)
 
 ---
 
