@@ -15,7 +15,7 @@ This is the official website for Living Waters Independent Baptist Church, Wise,
 
 
 ## Screenshot
-![Home Page](/uploads/church-building.jpeg)
+![Home Page](/uploads/homepage.png)
 
 ---
 
@@ -35,7 +35,7 @@ This is the official website for Living Waters Independent Baptist Church, Wise,
 ## Project Structure
 
 ```
-maucariapacom-church-starter/
+lwibc/
 ├── public/
 │   ├── uploads/          # Images directories (staff, events, sermons, etc.)
 │   │   ├── staff/        # Staff profile images
