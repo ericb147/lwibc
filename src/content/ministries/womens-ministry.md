@@ -38,6 +38,7 @@ To create a community where women of all ages and life stages can grow in their 
 
 ### Ladies' Fellowship
 **When**: Fourth Friday of each month, 7:00 PM
+
 **What**:
 - Bible study and discussion
 - Prayer time
