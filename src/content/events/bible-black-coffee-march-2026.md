@@ -7,7 +7,7 @@ location: "Fellowship Hall"
 address: "7561 Duncan Gap Rd. Wise, VA 24293"
 image: "/uploads/events/bible-black-coffee.png"
 summary: "Gather with us for our monthly Bible and Black Coffee men's meeting."
-tags: ["ladies fellowship"]
+tags: ["mens fellowship", "Bible study"]
 registrationRequired: false
 draft: false
 ---

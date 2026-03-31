@@ -79,8 +79,8 @@ lwibc/
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/MauCariApa-com/maucariapacom-church-starter.git
-   cd maucariapacom-church-starter
+   git clone https://github.com/ericb147/lwibc.git
+   cd lwibc
    ```
 
 2. Install dependencies:
@@ -108,17 +108,16 @@ All content is stored in Markdown (`.md`) files in the `src/content/` directory.
 
 ```markdown
 ---
-name: "John Smith"
-title: "Youth Pastor"
-image: "/uploads/staff/john-smith.webp"
-email: "john@example.com"
-phone: "+1-555-1234"
-bio: "John has been serving in youth ministry for 10 years."
-order: 3
+name: "Dr. Ricky Mullins"
+title: "Senior Pastor"
+image: "/uploads/staff/pastor.webp"
+email: "example@gmail.com"
+# phone: "+1-276-xxx-xxxx"
+bio: "Bio here"
+order: 1
 draft: false
 ---
-
-Detailed biography and information about John goes here...
+Details here
 ```
 
 #### Creating a New Event
@@ -128,22 +127,22 @@ Detailed biography and information about John goes here...
 
 ```markdown
 ---
-title: "Youth Summer Camp"
-date: 2025-07-15
-endDate: 2025-07-20
-time: "9:00 AM - 5:00 PM"
-location: "Camp Wilderness"
-image: "/uploads/events/summer-camp.webp"
-summary: "A week-long adventure for teens to grow in faith and have fun!"
-tags: ["youth", "summer", "camp"]
-registrationRequired: true
-registrationLink: "https://example.com/register"
+title: "Vision Service 2026"
+date: 2026-02-08
+endDate: 2026-02-08
+time: "11:00 AM"
+location: "Sanctuary"
+address: "7561 Duncan Gap Rd. Wise, VA 24293"
+image: "/uploads/events/vision-2026.jpg"
+summary: "Join us for our 2026 Vision Service for the new year and a dinner to follow in the fellowship hall."
+tags: ["vision", "sunday"]
+registrationRequired: false
 draft: false
 ---
 
-## About Summer Camp
+## About the Service
+Join us as we look forward to what God has in store for our church in 2026. After the morning service, we will move to the fellowship hall for a meal together.
 
-Join us for an exciting week of activities, worship, and spiritual growth...
 ```
 
 #### Creating a New Sermon
@@ -257,7 +256,7 @@ This starter is designed to work well with these headless CMS solutions:
 
 ## Deployment
 
-This site can be deployed to any static hosting platform:
+This site is deployed and hosted on Netlify:
 
 ### Netlify
 
@@ -265,27 +264,6 @@ This site can be deployed to any static hosting platform:
 2. Connect to Netlify
 3. Set build command to `npm run build` and publish directory to `dist/`
 
-### Vercel
-
-1. Push your repository to GitHub
-2. Import in Vercel
-3. It will automatically detect Astro and set up the correct build settings
-
-### GitHub Pages
-
-1. Install gh-pages:
-   ```bash
-   npm install -D gh-pages
-   ```
-
-2. Add deploy script to package.json:
-   ```json
-   "scripts": {
-     "deploy": "npm run build && gh-pages -d dist"
-   }
-   ```
-
-3. Run `npm run deploy`
 
 ## Browser Support
 
@@ -298,33 +276,14 @@ This site can be deployed to any static hosting platform:
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Bugs / Issues
-
-We appreciate your understanding and encourage you to report any new bugs you find by
-[opening an issue](https://github.com/MauCariApa-com/maucariapacom-church-starter/issues)
-on our GitHub repository.
-
-## Acknowledgments
-
-- [Astro](https://astro.build) for the awesome static site generator
-- [Tailwind CSS](https://tailwindcss.com) for the utility-first CSS framework
-- [Heroicons](https://heroicons.com) for the icon system
-- [Pexels](https://pexels.com) & [Unsplash](https://unsplash.com) for stock photography
 
 ## Support
 
 For questions, issues, or contributions, please visit our GitHub repository or contact the development team.
 
-## Donate
-
-Love our work? 
-
-[![Support via PayPal](https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg)](https://www.paypal.me/kodester/)
 
 ---
 
 ---
-
-Created with ❤️ for the Living Waters Independent Baptist Church community, Wise, VA.
 
 For questions, issues, or contributions, please contact the church office or visit our website.

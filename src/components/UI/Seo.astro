@@ -14,8 +14,8 @@ const {
   title,
   description,
   image = {
-    url: "/uploads/church-default.webp",
-    alt: "Church Name",
+    url: "/uploads/church-building.jpeg",
+    alt: "Living Waters Independent Baptist Church",
   },
   type = "website",
   canonicalUrl,
@@ -26,17 +26,17 @@ const canonicalURL = canonicalUrl || new URL(Astro.url.pathname, Astro.site);
 
 // Get Church address and contact info (would come from site config in a real implementation)
 const churchInfo = {
-  name: "Church Name",
+  name: "Living Waters Independent Baptist Church",
   address: {
-    streetAddress: "123 Main Street",
-    addressLocality: "Anytown",
-    addressRegion: "ST",
-    postalCode: "12345",
+    streetAddress: "7561 Duncan Gap Rd.",
+    addressLocality: "Wise",
+    addressRegion: "VA",
+    postalCode: "24293",
     addressCountry: "US",
   },
-  telephone: "+1-555-123-4567",
-  email: "info@churchname.org",
-  url: Astro.site?.toString() || "https://example.com",
+  //telephone: "+1-555-123-4567",
+  email: "RDMinistries2021@gmail.com",
+  url: Astro.site?.toString() || "https://lwibc.com",
 };
 ---
 
@@ -65,7 +65,7 @@ const churchInfo = {
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Church",
+    "@type": "Living Waters Independent Baptist Church",
     "name": "${churchInfo.name}",
     "address": {
       "@type": "PostalAddress",
@@ -95,7 +95,7 @@ const churchInfo = {
           "name": "${churchInfo.name}",
           "logo": {
             "@type": "ImageObject",
-            "url": "${new URL("/uploads/logo.png", Astro.site)}"
+            "url": "${new URL("public/favicon.svg", Astro.site)}"
           }
         },
         "url": "${canonicalURL}",

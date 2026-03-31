@@ -25,27 +25,37 @@ async function fetchPlaylistItems() {
     nextPageToken = res.data.nextPageToken;
   } while (nextPageToken);
 
-  // Get video IDs for all items
-  const videoIds = items.map(item => item.contentDetails.videoId).filter(Boolean);
-  // Fetch video details in batches of 50
-  let publicVideos = [];
+  return items;
+}
+
+async function fetchPublicVideoIds(videoIds) {
+  let publicIds = [];
   for (let i = 0; i < videoIds.length; i += 50) {
     const batchIds = videoIds.slice(i, i + 50);
     const res = await youtube.videos.list({
       part: ['status'],
       id: batchIds,
     });
-    const publicIds = res.data.items.filter(v => v.status.privacyStatus === 'public').map(v => v.id);
-    publicVideos = publicVideos.concat(publicIds);
+    publicIds = publicIds.concat(
+      res.data.items
+        .filter(v => v.status.privacyStatus === 'public')
+        .map(v => v.id)
+    );
   }
-  // Only return playlist items that are public
-  return items.filter(item => publicVideos.includes(item.contentDetails.videoId));
+  return publicIds;
 }
 
 function parseTitle(title) {
   // Example: "The Valley of Dry Bones - Dr. Ricky Mullins"
   const [sermonTitle, speaker] = title.split(' - ');
   return { sermonTitle: sermonTitle?.trim() || '', speaker: speaker?.trim() || '' };
+}
+
+function getFilenameBase(sermonTitle) {
+  return sermonTitle
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
 }
 
 function createMarkdown({ sermonTitle, speaker, date, videoId }) {
@@ -70,16 +80,32 @@ async function main() {
       .filter(f => f.endsWith('.md'))
       .map(f => f.replace(/\.md$/, ''))
   );
-  for (const item of items) {
+
+  const newItems = items.map(item => {
+    const { title } = item.snippet;
+    const { sermonTitle } = parseTitle(title);
+    const filenameBase = getFilenameBase(sermonTitle);
+    return { item, filenameBase };
+  }).filter(({ filenameBase }) => !existingFiles.has(filenameBase));
+
+  if (newItems.length === 0) {
+    console.log('No new playlist items to process.');
+    return;
+  }
+
+  const videoIdsToCheck = newItems.map(({ item }) => item.contentDetails.videoId).filter(Boolean);
+  const publicVideoIds = new Set(await fetchPublicVideoIds(videoIdsToCheck));
+
+  for (const { item, filenameBase } of newItems) {
     const { title, publishedAt, resourceId } = item.snippet;
     const { sermonTitle, speaker } = parseTitle(title);
     const videoId = resourceId.videoId;
-    const date = publishedAt.split('T')[0];
-    const filenameBase = sermonTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-    if (existingFiles.has(filenameBase)) {
-      console.log(`Skipping (already exists): ${filenameBase}.md`);
+    if (!publicVideoIds.has(videoId)) {
+      console.log(`Skipping (not public): ${filenameBase}.md`);
       continue;
     }
+
+    const date = publishedAt.split('T')[0];
     const markdown = createMarkdown({ sermonTitle, speaker, date, videoId });
     fs.writeFileSync(path.join(OUTPUT_DIR, filenameBase + '.md'), markdown);
     console.log(`Created: ${filenameBase}.md`);

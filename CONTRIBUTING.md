@@ -1,12 +1,7 @@
-# Contributing to maucariapacom-church-starter
-
-First off, thank you for considering contributing to the MauCariApa.com Church Starter template! We welcome contributions from the community to make this template even better for church websites PDPN.
-
-Whether you're fixing a bug, improving documentation, adding a new feature, or suggesting an enhancement, your help is appreciated.
+# Contributing to lwibc
 
 ## Table of Contents
 
-- [Code of Conduct](#code-of-conduct)
 - [How Can I Contribute?](#how-can-i-contribute)
   - [Reporting Bugs](#reporting-bugs)
   - [Suggesting Enhancements or New Features](#suggesting-enhancements-or-new-features)
@@ -20,9 +15,7 @@ Whether you're fixing a bug, improving documentation, adding a new feature, or s
 - [Submitting a Pull Request](#submitting-a-pull-request)
 - [License](#license)
 
-## Code of Conduct
 
-This project and everyone participating in it is governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to info@maucariapa.com.
 
 ## How Can I Contribute?
 

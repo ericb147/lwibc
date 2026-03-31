@@ -34,39 +34,82 @@ const staff = all.sort((a, b) =>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {staff.map(member => (
-          <a
-            href={`/staff/${member.slug}`}
-            class="bg-white rounded-lg shadow flex flex-col overflow-hidden hover:shadow-lg transition min-h-[370px]"
-          >
-            {member.data.image && (
-              <div class="w-full aspect-square overflow-hidden">
-                <img
-                  src={member.data.image}
-                  alt={member.data.name}
-                  class="w-full h-full object-cover object-center"
-                />
-              </div>
-            )}
+        {staff.map(member => {
+          const canViewFull = member.data.full === true;
+          return (
+            canViewFull ? (
+              <a
+                href={`/staff/${member.slug}`}
+                class="bg-white rounded-lg shadow flex flex-col overflow-hidden hover:shadow-lg transition min-h-[370px]"
+              >
+                {member.data.image && (
+                  <div class="w-full aspect-square overflow-hidden">
+                    <img
+                      src={member.data.image}
+                      alt={member.data.name}
+                      class="w-full h-full object-cover object-center"
+                    />
+                  </div>
+                )}
 
-            <div class="p-6 flex flex-col flex-1 justify-between">
-              <div>
-                <h3 class="text-xl font-bold text-gray-900 mb-1">{member.data.name}</h3>
-                <p class="text-primary-600 font-medium mb-3">{member.data.title}</p>
-                <p class="text-gray-700 text-sm leading-relaxed">{member.data.bio}</p>
+                <div class="p-6 flex flex-col flex-1 justify-between">
+                  <div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">{member.data.name}</h3>
+                    <p class="text-primary-600 font-medium mb-3">{member.data.title}</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">{member.data.bio}</p>
+                  </div>
+                  
+                  <div class="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between gap-4">
+                    <span class="text-primary-700 text-sm font-semibold flex items-center">
+                      View Full Profile
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                    {member.data.email ? (
+                      <span class="text-primary-700 text-sm font-semibold break-words text-right">
+                        {member.data.email}
+                      </span>
+                    ) : (
+                      <span class="text-gray-500 text-sm">Email not available</span>
+                    )}
+                  </div>
+                </div>
+              </a>
+            ) : (
+              <div class="bg-white rounded-lg shadow flex flex-col overflow-hidden min-h-[370px] opacity-90 cursor-default">
+                {member.data.image && (
+                  <div class="w-full aspect-square overflow-hidden">
+                    <img
+                      src={member.data.image}
+                      alt={member.data.name}
+                      class="w-full h-full object-cover object-center"
+                    />
+                  </div>
+                )}
+
+                <div class="p-6 flex flex-col flex-1 justify-between">
+                  <div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">{member.data.name}</h3>
+                    <p class="text-primary-600 font-medium mb-3">{member.data.title}</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">{member.data.bio}</p>
+                  </div>
+                  
+                  <div class="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between gap-4">
+                    <span aria-hidden="true" class="invisible text-sm font-semibold">Placeholder</span>
+                    {member.data.email ? (
+                      <a href={`mailto:${member.data.email}`} class="text-primary-700 text-sm font-semibold break-words text-right">
+                        {member.data.email}
+                      </a>
+                    ) : (
+                      <span class="text-gray-500 text-sm">Email not available</span>
+                    )}
+                  </div>
+                </div>
               </div>
-              
-              <div class="mt-4 pt-4 border-t border-gray-100">
-                <span class="text-primary-700 text-sm font-semibold flex items-center">
-                  View Full Profile
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                  </svg>
-                </span>
-              </div>
-            </div>
-          </a>
-        ))}
+            )
+          );
+        })}
       </div>
     </div>
   </section>

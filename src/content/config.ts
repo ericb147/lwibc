@@ -11,6 +11,7 @@ const staffCollection = defineCollection({
     bio: z.string().optional(), // Short bio in frontmatter
     order: z.number().default(0),
     draft: z.boolean().default(false),
+    full: z.boolean().default(false), // Whether to show full bio on staff page
   }),
 });
 

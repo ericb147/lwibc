@@ -10,39 +10,50 @@ import { parseISO } from "date-fns";
 export function formatDate(date) {
   if (!date) return "";
 
-  // 1. Convert everything to a Date object
-  // Astro Content Collections usually pass a Date object, 
-  // but we handle strings just in case.
   const dateObj = typeof date === "string" ? parseISO(date) : date;
 
-  // 2. Use the Internationalization API to force UTC.
-  // This prevents the system from subtracting hours based on local timezones.
   return new Intl.DateTimeFormat('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-    timeZone: 'UTC', 
+    timeZone: 'UTC',
   }).format(dateObj);
 }
 
+function getUTCDateValue(date) {
+  return Date.UTC(
+    date.getUTCFullYear(),
+    date.getUTCMonth(),
+    date.getUTCDate(),
+    0,
+    0,
+    0,
+    0
+  );
+}
+
 /**
- * Check if a date is in the future
+ * Check if a date is in the future (ignores time, compares date only)
  * @param {Date|string} date The date to check
- * @returns {boolean} True if the date is in the future
+ * @returns {boolean} True if the date is today or in the future
  */
 export function isFutureDate(date) {
   if (!date) return false;
   const dateObj = typeof date === "string" ? parseISO(date) : date;
-  return dateObj > new Date();
+  const todayValue = getUTCDateValue(new Date());
+  const eventValue = getUTCDateValue(dateObj);
+  return eventValue >= todayValue;
 }
 
 /**
- * Check if a date is in the past
+ * Check if a date is in the past (ignores time, compares date only)
  * @param {Date|string} date The date to check
- * @returns {boolean} True if the date is in the past
+ * @returns {boolean} True if the date is before today
  */
 export function isPastDate(date) {
   if (!date) return false;
   const dateObj = typeof date === "string" ? parseISO(date) : date;
-  return dateObj < new Date();
+  const todayValue = getUTCDateValue(new Date());
+  const eventValue = getUTCDateValue(dateObj);
+  return eventValue < todayValue;
 }
