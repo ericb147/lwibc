@@ -145,7 +145,16 @@ Join us as we look forward to what God has in store for our church in 2026. Afte
 
 ```
 
-#### Creating a New Sermon
+#### Creating a New Sermon via Script
+
+1. Run the sermon generation script:
+   ```bash
+   node generate-sermons.cjs
+   ```
+2. The script will create the markdown file with proper frontmatter formatting
+3. You will need the YouTube API key for this to work.
+
+#### Creating a New Sermon Manually
 
 1. Create a new file in `src/content/sermons/` with a `.md` extension
 2. Add the required frontmatter fields:
@@ -183,7 +192,6 @@ See `src/content/config.ts` for the complete schema definitions for all content 
 - **Ministries** (`/ministries`): All church ministries with detailed pages
 - **Sermons** (`/sermons`): Sermon archive with audio/video support and filtering
 - **Events** (`/events`): Upcoming and past events with registration support
-- **Blog** (`/blog`): Church blog with filtering and search
 - **I'm New** (`/im-new`): First-time visitor information
 - **Contact** (`/contact`): Contact forms, location, staff contacts
 - **Giving** (`/giving`): Online giving information and financial transparency
@@ -230,24 +238,12 @@ Images are organized in the `/public/uploads/` directory:
 - `/uploads/events/` - Event images
 - `/uploads/sermons/` - Sermon thumbnails
 - `/uploads/ministries/` - Ministry logos
-- `/uploads/blog/` - Blog post images
 
 The template includes fallback handling for missing images and uses external Unsplash images for some sections.
 
 ## Headless CMS Integration
 
-This starter is designed to work well with these headless CMS solutions:
-
-### TinaCMS
-
-1. Install TinaCMS:
-   ```bash
-   npm install tinacms @tinacms/cli
-   ```
-
-2. Add the Tina config file (see TinaCMS documentation)
-
-3. The existing Content Collections schemas can be adapted for TinaCMS
+TODO:
 
 ### Decap CMS (formerly Netlify CMS)
 
@@ -277,9 +273,6 @@ This site is deployed and hosted on Netlify:
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 
-## Support
-
-For questions, issues, or contributions, please visit our GitHub repository or contact the development team.
 
 
 ---
