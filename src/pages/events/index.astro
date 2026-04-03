@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHeader from "../../components/Sections/PageHeader.astro";
 import Card from "../../components/UI/Card.astro";
 import { getCollection } from "astro:content";
-import { formatDate, isFutureDate, isPastDate } from "../../utils/dateUtils";
+import { formatEventDate, isFutureDate, isPastDate } from "../../utils/dateUtils";
 
 // Get all events
 const allEvents = await getCollection("events", ({ data }) => {
@@ -11,10 +11,10 @@ const allEvents = await getCollection("events", ({ data }) => {
 });
 
 // Separate upcoming and past events
-const upcomingEvents = allEvents.filter(event => isFutureDate(event.data.date))
+const upcomingEvents = allEvents.filter(event => isFutureDate(event.data.endDate ?? event.data.date))
                             .sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime());
 
-const pastEvents = allEvents.filter(event => isPastDate(event.data.date))
+const pastEvents = allEvents.filter(event => isPastDate(event.data.endDate ?? event.data.date))
                         .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
                         .slice(0, 6); // Show only the most recent past events
 ---
@@ -53,7 +53,7 @@ const pastEvents = allEvents.filter(event => isPastDate(event.data.date))
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              <span>{formatDate(event.data.date)}</span>
+              <span>{formatEventDate(event.data.date, event.data.endDate)}</span>
             </div>
             
             {event.data.time && (
@@ -111,7 +111,7 @@ const pastEvents = allEvents.filter(event => isPastDate(event.data.date))
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
-                  <span>{formatDate(event.data.date)}</span>
+                  <span>{formatEventDate(event.data.date, event.data.endDate)}</span>
                 </div>
                 
                 <div class="mb-3 flex items-center text-gray-600">

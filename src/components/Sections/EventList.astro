@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import Card from "../UI/Card.astro";
 import Button from "../UI/Button.astro";
-import { formatDate, isFutureDate } from "../../utils/dateUtils";
+import { formatEventDate, isFutureDate } from "../../utils/dateUtils";
 
 export interface Props {
   count?: number;
@@ -19,7 +19,7 @@ const allEvents = await getCollection("events", ({ data }) => {
 // Sort by date (upcoming first)
 const events = allEvents
   .sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime())
-  .filter(event => isFutureDate(event.data.date)) // Only future events (today included)
+  .filter(event => isFutureDate(event.data.endDate ?? event.data.date)) // Only future events (today included)
   .slice(0, count);
 ---
 
@@ -46,7 +46,7 @@ const events = allEvents
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <span>{formatDate(event.data.date)}</span>
+            <span>{formatEventDate(event.data.date, event.data.endDate)}</span>
           </div>
           
           <div class="mb-3 flex items-center text-gray-600">
