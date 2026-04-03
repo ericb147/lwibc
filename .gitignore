@@ -25,3 +25,5 @@ pnpm-debug.log*
 
 # nodejs
 package-lock.json
+
+.vscode
