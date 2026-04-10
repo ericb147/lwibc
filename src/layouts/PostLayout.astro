@@ -14,7 +14,7 @@ export interface Props {
   date?: Date;
   author?: string;
   tags?: string[];
-  type?: "sermon" | "event" | "blog" | "ministry";
+  type?: "sermon" | "event" | "ministry";
   videoUrl?: string;
 }
 
@@ -25,7 +25,7 @@ const {
   date,
   author,
   tags = [],
-  type = "blog",
+  type = "sermon",
   videoUrl,
 } = Astro.props;
 

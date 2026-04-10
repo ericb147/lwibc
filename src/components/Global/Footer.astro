@@ -1,16 +1,4 @@
 ---
-import { getCollection } from "astro:content";
-
-// Get the office hours from the siteInfo collection
-let officeHours;
-try {
-  const siteInfoEntries = await getCollection("siteInfo");
-  officeHours = siteInfoEntries.find(entry => entry.id === "office-hours");
-} catch (error) {
-  // Collection might not exist yet when first setting up the project
-  console.log("Office hours not found or collections not yet available");
-}
-
 // Footer navigation groups
 const footerNavs = [
   {
@@ -64,13 +52,6 @@ const socialLinks = [
 
 // Current year for copyright
 const currentYear = new Date().getFullYear();
-
-// Render office hours content if available
-let OfficeHoursContent = null;
-if (officeHours) {
-  const { Content } = await officeHours.render();
-  OfficeHoursContent = Content;
-}
 ---
 
 <footer class="bg-gray-900 text-white pt-16 pb-8">
@@ -99,24 +80,7 @@ if (officeHours) {
             </a>
           </p>
         </address>
-        
-        <!-- Office Hours -->
-        <!-- <div class="mt-4 text-gray-300">
-          <h4 class="text-sm font-bold mb-2 text-white">Office Hours</h4>
-          {
-            OfficeHoursContent ? (
-              <div class="text-sm prose prose-sm prose-invert max-w-none [&_h3]:text-white [&_h3]:text-sm [&_h3]:font-bold [&_h3]:mb-2 [&_ul]:list-none [&_ul]:p-0 [&_li]:mb-1 [&_strong]:text-white">
-                <OfficeHoursContent />
-              </div>
-            ) : (
-              <div class="text-sm">
-                <p><strong class="text-white">Mon-Fri:</strong> 9:00 AM - 5:00 PM</p>
-                <p><strong class="text-white">Saturday:</strong> 9:00 AM - 1:00 PM</p>
-                <p><strong class="text-white">Sunday:</strong> Closed (except services)</p>
-              </div>
-            )
-          }
-        </div> -->
+
 
         <div class="mt-4 text-gray-300">
           <h4 class="text-sm font-bold mb-2 text-white">Service Times</h4>

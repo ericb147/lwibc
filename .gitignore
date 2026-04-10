@@ -27,3 +27,5 @@ pnpm-debug.log*
 package-lock.json
 
 .vscode
+
+TODO.md
