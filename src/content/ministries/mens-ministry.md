@@ -1,7 +1,7 @@
 ---
 name: "Men's Ministry"
 slug: "mens-ministry"
-logo: "/uploads/ministries/mens-ministry.png"
+logo: "/uploads/ministries/mens-ministry.webp"
 background: "/uploads/ministries/iron.jpg"
 summary: "Equipping men to be spiritual leaders in the home and church through the study of the King James Bible, fellowship, and diligent service."
 coordinator: "Pastor Ricky Mullins"

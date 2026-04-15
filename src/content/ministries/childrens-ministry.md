@@ -4,7 +4,7 @@ slug: "childrens-ministry"
 logo: "/uploads/ministries/children.webp"
 summary: "Training up children in the way they should go through the faithful teaching of the King James Bible."
 coordinator: "Jason Ingles"
-contact: "RDMinistries2021@gmail.com"
+contact: "jason.m.ingles@gmail.com"
 schedule: "Children's Church: Sunday Morning | Wednesday Night"
 order: 1
 draft: false

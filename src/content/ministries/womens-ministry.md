@@ -1,7 +1,7 @@
 ---
 name: "Women's Ministry"
 slug: "womens-ministry"
-logo: "/uploads/ministries/womens-ministry.png"
+logo: "/uploads/ministries/womens-ministry.webp"
 summary: "Empowering women to grow in faith, build meaningful relationships, and serve God with their unique gifts and calling."
 coordinator: "Brooke Mullins"
 contact: "RDMinistries2021@gmail.com"
