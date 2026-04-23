@@ -22,6 +22,7 @@ const eventsCollection = defineCollection({
     date: z.date(), // Event start date
     endDate: z.date().optional(), // Event end date
     time: z.string().optional(), // e.g., "09:00 AM - 11:00 AM"
+    price: z.number().optional(), // Decimal price, e.g., 15.50 for tickets
     location: z.string(),
     address: z.string().optional(),
     image: z.string().startsWith('/uploads/events/'),
