@@ -29,6 +29,7 @@ const eventsCollection = defineCollection({
     tags: z.array(z.string()).optional(),
     registrationLink: z.string().url().optional(),
     registrationRequired: z.boolean().default(false),
+    price: z.string().optional(), // e.g., "$10", "Free", "Donation"
     draft: z.boolean().default(false),
   }),
 });

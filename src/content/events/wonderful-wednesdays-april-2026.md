@@ -13,4 +13,4 @@ draft: false
 ---
 
 ## About the Event
-This month brother Jason Ingles will be bringing the Word.
+This month brother Ethan Willis will be bringing the Word.
