@@ -58,6 +58,15 @@ function getFilenameBase(sermonTitle) {
     .replace(/^-+|-+$/g, '');
 }
 
+function getLastSunday(dateString) {
+  // dateString format: "2026-05-01"
+  const date = new Date(dateString + 'T00:00:00Z');
+  const dayOfWeek = date.getUTCDay(); // 0 = Sunday, 1 = Monday, etc.
+  const daysBack = dayOfWeek; // Sunday = 0 days back, Monday = 1 day back, etc.
+  date.setUTCDate(date.getUTCDate() - daysBack);
+  return date.toISOString().split('T')[0];
+}
+
 function createMarkdown({ sermonTitle, speaker, date, videoId }) {
   const cleanTitle = sermonTitle.replace(/^"+|"+$/g, '').replace(/^'+|'+$/g, '');
   return `---
@@ -105,7 +114,8 @@ async function main() {
       continue;
     }
 
-    const date = publishedAt.split('T')[0];
+    const uploadDate = publishedAt.split('T')[0];
+    const date = getLastSunday(uploadDate);
     const markdown = createMarkdown({ sermonTitle, speaker, date, videoId });
     fs.writeFileSync(path.join(OUTPUT_DIR, filenameBase + '.md'), markdown);
     console.log(`Created: ${filenameBase}.md`);
