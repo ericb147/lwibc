@@ -68,7 +68,7 @@ function getLastSunday(dateString) {
 }
 
 function createMarkdown({ sermonTitle, speaker, date, videoId }) {
-  const cleanTitle = sermonTitle.replace(/^"+|"+$/g, '').replace(/^'+|'+$/g, '');
+  const cleanTitle = sermonTitle.replace(/^[""]|[""]$/g, '').replace(/^['']|['']$/g, '');
   return `---
 title: "${cleanTitle}"
 date: ${date}
