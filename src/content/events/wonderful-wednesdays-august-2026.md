@@ -1,7 +1,7 @@
 ---
 title: "Wonderful Wednesdays"
-date: 2026-07-29
-endDate: 2026-07-29
+date: 2026-08-26
+endDate: 2026-08-26
 time: "7:00 PM"
 location: "Sanctuary"
 address: "7561 Duncan Gap Rd. Wise, VA 24293"
