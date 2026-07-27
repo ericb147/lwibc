@@ -1,7 +1,7 @@
 ---
 title: "Bible and Black Coffee"
-date: 2026-08-08
-endDate: 2026-08-08
+date: 2026-08-01
+endDate: 2026-08-01
 time: "7:00 AM"
 location: "Fellowship Hall"
 address: "7561 Duncan Gap Rd. Wise, VA 24293"
