@@ -13,7 +13,7 @@ const { count = 3, showViewAll = true } = Astro.props;
 
 // Get events sorted by date (newest first)
 const allEvents = await getCollection("events", ({ data }) => {
-  return import.meta.env.PROD ? !data.draft : true;
+  return import.meta.env.PROD ? !data.draft && data.published : true;
 });
 
 // Sort by date (upcoming first)

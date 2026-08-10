@@ -10,7 +10,7 @@ import { formatDate } from "../../utils/dateUtils";
 export async function getStaticPaths() {
   try {
     const sermonEntries = await getCollection("sermons", ({ data }) => {
-      return import.meta.env.PROD ? !data.draft : true;
+      return import.meta.env.PROD ? !data.draft && data.published : true;
     });
 
     return sermonEntries.map(entry => ({
@@ -35,7 +35,7 @@ let relatedSermons = [];
 if (entry.data.series) {
   try {
     const allSermons = await getCollection("sermons", ({ data }) => {
-      return import.meta.env.PROD ? !data.draft : true;
+      return import.meta.env.PROD ? !data.draft && data.published : true;
     });
     
     relatedSermons = allSermons

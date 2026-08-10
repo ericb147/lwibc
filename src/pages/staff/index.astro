@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 
 // Fetch and sort staff exactly like the ministries template
 const all = await getCollection("staff", ({ data }) =>
-  import.meta.env.PROD ? !data.draft : true
+  import.meta.env.PROD ? !data.draft && data.published : true
 );
 
 const staff = all.sort((a, b) =>

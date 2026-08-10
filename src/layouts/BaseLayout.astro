@@ -4,6 +4,9 @@ import Seo from "../components/UI/Seo.astro";
 import Header from "../components/Global/Header.astro";
 import Footer from "../components/Global/Footer.astro";
 import Logo from "../components/UI/Logo.astro";
+import { getSiteInfo } from "../utils/siteInfo";
+
+const siteInfo = await getSiteInfo();
 
 export interface Props {
   title?: string;
@@ -17,11 +20,11 @@ export interface Props {
 }
 
 const {
-  title = "Living Waters Independent Baptist Church",
-  description = "Preaching the Word. Proclaiming the Gospel.",
+  title = siteInfo.defaultSeoTitle || siteInfo.churchName,
+  description = siteInfo.defaultSeoDescription || "Preaching the Word. Proclaiming the Gospel.",
   image = {
     url: "/uploads/church-building.jpeg",
-    alt: "Living Waters Independent Baptist Church",
+    alt: siteInfo.churchName,
   },
   type = "website",
   canonicalUrl,

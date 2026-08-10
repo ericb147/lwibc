@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 const { showAll = true, limit = 6 } = Astro.props;
 
 const allStaff = await getCollection("staff", ({ data }) =>
-  import.meta.env.PROD ? !data.draft : true
+  import.meta.env.PROD ? !data.draft && data.published : true
 );
 const staffMembers = allStaff
   .sort((a, b) => a.data.order - b.data.order)

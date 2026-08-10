@@ -5,7 +5,7 @@ import Button from "../UI/Button.astro";
 import { formatDate } from "../../utils/dateUtils";
 
 const sermons = (await getCollection("sermons", ({ data }) => {
-  return import.meta.env.PROD ? !data.draft : true;
+  return import.meta.env.PROD ? !data.draft && data.published : true;
 }))
 .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
 .slice(0, 3);

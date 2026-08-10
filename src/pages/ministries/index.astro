@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 
 // Fetch all ministries
 const all = await getCollection("ministries", ({ data }) =>
-  import.meta.env.PROD ? !data.draft : true
+  import.meta.env.PROD ? !data.draft && data.published : true
 );
 // Sort by order or name
 const ministries = all.sort((a, b) =>

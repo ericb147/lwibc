@@ -7,7 +7,7 @@ import { formatEventDate, isFutureDate } from "../../utils/dateUtils";
 
 export async function getStaticPaths() {
   const eventEntries = await getCollection("events", ({ data }) => {
-    return import.meta.env.PROD ? !data.draft : true;
+    return import.meta.env.PROD ? !data.draft && data.published : true;
   });
   return eventEntries.map(entry => ({
     params: { slug: entry.slug },

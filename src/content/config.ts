@@ -3,6 +3,7 @@ import { defineCollection, z } from 'astro:content';
 const staffCollection = defineCollection({
   type: 'content',
   schema: z.object({
+    slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/).optional(),
     name: z.string(),
     title: z.string(), // e.g., "Senior Pastor"
     image: z.string().startsWith('/uploads/staff/'),
@@ -11,6 +12,7 @@ const staffCollection = defineCollection({
     bio: z.string().optional(), // Short bio in frontmatter
     order: z.number().default(0),
     draft: z.boolean().default(false),
+    published: z.boolean().default(true),
     full: z.boolean().default(false), // Whether to show full bio on staff page
   }),
 });
@@ -18,10 +20,14 @@ const staffCollection = defineCollection({
 const eventsCollection = defineCollection({
   type: 'content',
   schema: z.object({
+    slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/).optional(),
     title: z.string(),
     date: z.date(), // Event start date
     endDate: z.date().optional(), // Event end date
     time: z.string().optional(), // e.g., "09:00 AM - 11:00 AM"
+    startTime: z.string().optional(),
+    endTime: z.string().optional(),
+    timezone: z.string().default('America/New_York'),
     location: z.string(),
     address: z.string().optional(),
     image: z.string().startsWith('/uploads/events/'),
@@ -30,7 +36,10 @@ const eventsCollection = defineCollection({
     registrationLink: z.string().url().optional(),
     registrationRequired: z.boolean().default(false),
     price: z.string().optional(), // e.g., "$10", "Free", "Donation"
+    featured: z.boolean().default(false),
+    externalId: z.string().optional(),
     draft: z.boolean().default(false),
+    published: z.boolean().default(true),
   }),
 });
 
@@ -48,6 +57,9 @@ const sermonsCollection = defineCollection({
     image: z.string().startsWith('/uploads/sermons/').optional(), // Thumbnail
     summary: z.string().optional(),
     tags: z.array(z.string()).optional(),
+    externalId: z.string().optional(), // Stable ID from YouTube or another media provider
+    contentSource: z.enum(['manual', 'youtube', 'other']).default('manual'),
+    published: z.boolean().default(true),
     draft: z.boolean().default(false),
   }),
 });
@@ -55,6 +67,7 @@ const sermonsCollection = defineCollection({
 const ministriesCollection = defineCollection({
   type: 'content',
   schema: z.object({
+    slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/).optional(),
     name: z.string(),
     logo: z.string().startsWith('/uploads/ministries/').optional(),
     background: z.string().startsWith('/uploads/ministries/').optional(),
@@ -63,7 +76,51 @@ const ministriesCollection = defineCollection({
     contact: z.string().optional(), // Email or text
     schedule: z.string().optional(),
     order: z.number().optional(),
+    featured: z.boolean().default(false),
+    published: z.boolean().default(true),
     draft: z.boolean().default(false),
+  }),
+});
+
+const announcementsCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/).optional(),
+    publishedAt: z.date(),
+    expiresAt: z.date().optional(),
+    summary: z.string(),
+    image: z.string().startsWith('/uploads/').optional(),
+    link: z.string().url().optional(),
+    featured: z.boolean().default(false),
+    published: z.boolean().default(true),
+    draft: z.boolean().default(false),
+  }),
+});
+
+const siteInfoCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    churchName: z.string(),
+    address: z.string(),
+    streetAddress: z.string(),
+    city: z.string(),
+    state: z.string(),
+    postalCode: z.string(),
+    mailingAddress: z.string().optional(),
+    email: z.string().email(),
+    phone: z.string().optional(),
+    serviceTimes: z.array(z.object({
+      name: z.string(),
+      day: z.string(),
+      time: z.string(),
+    })).default([]),
+    youtubeUrl: z.string().url().optional(),
+    flocknoteUrl: z.string().url().optional(),
+    facebookUrl: z.string().url().optional(),
+    givingUrl: z.string().url().optional(),
+    defaultSeoTitle: z.string().optional(),
+    defaultSeoDescription: z.string().optional(),
   }),
 });
 
@@ -72,4 +129,6 @@ export const collections = {
   events: eventsCollection,
   sermons: sermonsCollection,
   ministries: ministriesCollection,
+  announcements: announcementsCollection,
+  siteInfo: siteInfoCollection,
 };

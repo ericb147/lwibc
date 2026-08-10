@@ -21,21 +21,23 @@ const {
   canonicalUrl,
 } = Astro.props;
 
+import { getSiteInfo } from "../../utils/siteInfo";
+const siteInfo = await getSiteInfo();
+
 // Get the canonical URL
 const canonicalURL = canonicalUrl || new URL(Astro.url.pathname, Astro.site);
 
-// Get Church address and contact info (would come from site config in a real implementation)
 const churchInfo = {
-  name: "Living Waters Independent Baptist Church",
+  name: siteInfo.churchName,
   address: {
-    streetAddress: "7561 Duncan Gap Rd.",
-    addressLocality: "Wise",
-    addressRegion: "VA",
-    postalCode: "24293",
+    streetAddress: siteInfo.streetAddress,
+    addressLocality: siteInfo.city,
+    addressRegion: siteInfo.state,
+    postalCode: siteInfo.postalCode,
     addressCountry: "US",
   },
-  //telephone: "+1-555-123-4567",
-  email: "RDMinistries2021@gmail.com",
+  telephone: siteInfo.phone,
+  email: siteInfo.email,
   url: Astro.site?.toString() || "https://lwibc.com",
 };
 ---

@@ -97,6 +97,15 @@ lwibc/
 
 ## Content Management
 
+### Sanity CMS (Phase 2)
+
+The Sanity Studio lives in the `cms/` directory and is intentionally deployed
+separately from the Astro site. Its schemas cover events, sermons/messages, staff,
+ministries, announcements, sermon series, and shared site settings.
+
+See `cms/README.md` for setup instructions. Before starting the Studio, create a
+Sanity project and set `SANITY_STUDIO_PROJECT_ID` in `cms/.env`.
+
 ### Adding/Editing Content
 
 All content is stored in Markdown (`.md`) files in the `src/content/` directory.
@@ -182,6 +191,21 @@ Content of your sermon goes here...
 ### Content Schema
 
 See `src/content/config.ts` for the complete schema definitions for all content types.
+
+The content model now includes CMS-ready fields while remaining compatible with the
+existing Markdown files:
+
+- `published` controls whether a record is eligible for production builds.
+- `draft` remains supported as a legacy/local preview flag.
+- `slug` provides an optional stable URL identifier for content records.
+- `externalId` identifies records synchronized from external systems such as YouTube.
+- Events support structured `startTime`, `endTime`, and `timezone` values in addition to
+   the existing display-oriented `time` field.
+- `announcements` and `siteInfo` collections provide a starting point for future
+   church-wide content and shared settings.
+
+Existing records receive safe defaults for these new fields, so no bulk content rewrite
+is required before introducing a headless CMS.
 
 ## Key Pages and Features
 

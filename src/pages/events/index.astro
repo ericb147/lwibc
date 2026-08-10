@@ -7,7 +7,7 @@ import { formatEventDate, isFutureDate, isPastDate } from "../../utils/dateUtils
 
 // Get all events
 const allEvents = await getCollection("events", ({ data }) => {
-  return import.meta.env.PROD ? !data.draft : true;
+  return import.meta.env.PROD ? !data.draft && data.published : true;
 });
 
 // Separate upcoming and past events
