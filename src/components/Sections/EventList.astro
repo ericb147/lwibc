@@ -1,8 +1,8 @@
 ---
-import { getCollection } from "astro:content";
 import Card from "../UI/Card.astro";
 import Button from "../UI/Button.astro";
 import { formatEventDate, isFutureDate } from "../../utils/dateUtils";
+import { getEventImage, getEvents } from "../../utils/events";
 
 export interface Props {
   count?: number;
@@ -12,9 +12,7 @@ export interface Props {
 const { count = 3, showViewAll = true } = Astro.props;
 
 // Get events sorted by date (newest first)
-const allEvents = await getCollection("events", ({ data }) => {
-  return import.meta.env.PROD ? !data.draft && data.published : true;
-});
+const allEvents = await getEvents();
 
 // Sort by date (upcoming first)
 const events = allEvents
@@ -37,7 +35,7 @@ const events = allEvents
         <Card
           title={event.data.title}
           image={{
-            src: event.data.image,
+            src: getEventImage(event),
             alt: event.data.title
           }}
           href={`/events/${event.slug}`}

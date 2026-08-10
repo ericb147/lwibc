@@ -2,13 +2,11 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHeader from "../../components/Sections/PageHeader.astro";
 import Card from "../../components/UI/Card.astro";
-import { getCollection } from "astro:content";
 import { formatEventDate, isFutureDate, isPastDate } from "../../utils/dateUtils";
+import { getEventImage, getEvents } from "../../utils/events";
 
 // Get all events
-const allEvents = await getCollection("events", ({ data }) => {
-  return import.meta.env.PROD ? !data.draft && data.published : true;
-});
+const allEvents = await getEvents();
 
 // Separate upcoming and past events
 const upcomingEvents = allEvents.filter(event => isFutureDate(event.data.endDate ?? event.data.date))
@@ -44,7 +42,7 @@ const pastEvents = allEvents.filter(event => isPastDate(event.data.endDate ?? ev
           <Card
             title={event.data.title}
             image={{
-              src: event.data.image,
+              src: getEventImage(event),
               alt: event.data.title
             }}
             href={`/events/${event.slug}`}
@@ -101,7 +99,7 @@ const pastEvents = allEvents.filter(event => isPastDate(event.data.endDate ?? ev
               <Card
                 title={event.data.title}
                 image={{
-                  src: event.data.image,
+                  src: getEventImage(event),
                   alt: event.data.title
                 }}
                 href={`/events/${event.slug}`}

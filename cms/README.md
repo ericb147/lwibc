@@ -17,6 +17,12 @@ The current schemas cover events, sermons/messages, staff, ministries, announcem
 
 After signing in with the Sanity CLI, deploy the Studio with `npm run deploy`. The Studio is separate from the Astro website and can be deployed independently.
 
+The current hosted Studio is available at:
+
+https://lwibc.sanity.studio/
+
+Future deployments can be published by running `npm run deploy` from this directory.
+
 ## Content status
 
 Sanity documents are unpublished by default until they are published in the Studio. The Astro integration in the website will query the published dataset in the next phase.

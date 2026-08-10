@@ -106,6 +106,29 @@ ministries, announcements, sermon series, and shared site settings.
 See `cms/README.md` for setup instructions. Before starting the Studio, create a
 Sanity project and set `SANITY_STUDIO_PROJECT_ID` in `cms/.env`.
 
+### Astro/Sanity connection (Phase 3)
+
+The Astro site now has a centralized Sanity client and query layer in
+`src/lib/sanity/`. Shared site settings are read from the published Sanity
+`siteSettings` document when Sanity is configured. Until that document is
+available, the site safely falls back to `src/content/siteInfo/site-info.md`.
+
+To enable the Sanity-backed settings locally, add these values to the website's
+root `.env` file:
+
+```text
+PUBLIC_SANITY_PROJECT_ID=0qy7g77d
+PUBLIC_SANITY_DATASET=production
+```
+
+The same variables should be added to the eventual Netlify or Cloudflare Pages
+build environment. The next migration target is events, followed by sermons.
+
+Event queries are now centralized in `src/utils/events.js`. The site continues to
+use Markdown events by default. After existing events have been imported into
+Sanity and verified, set `PUBLIC_SANITY_EVENTS_ENABLED=true` in the website
+environment to switch the event pages to Sanity.
+
 ### Adding/Editing Content
 
 All content is stored in Markdown (`.md`) files in the `src/content/` directory.

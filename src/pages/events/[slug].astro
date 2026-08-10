@@ -2,13 +2,11 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHeader from "../../components/Sections/PageHeader.astro";
 import Button from "../../components/UI/Button.astro";
-import { getCollection } from "astro:content";
 import { formatEventDate, isFutureDate } from "../../utils/dateUtils";
+import { getEventImage, getEvents } from "../../utils/events";
 
 export async function getStaticPaths() {
-  const eventEntries = await getCollection("events", ({ data }) => {
-    return import.meta.env.PROD ? !data.draft && data.published : true;
-  });
+  const eventEntries = await getEvents();
   return eventEntries.map(entry => ({
     params: { slug: entry.slug },
     props: { entry },
@@ -16,17 +14,18 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const Content = entry.source === "markdown" ? (await entry.render()).Content : null;
 
 const formattedDate = formatEventDate(entry.data.date, entry.data.endDate);
 const isFutureEvent = isFutureDate(entry.data.endDate || entry.data.date);
+const eventImage = getEventImage(entry);
 ---
 
 <BaseLayout
   title={entry.data.title}
   description={entry.data.summary}
   type="article"
-  image={{ url: entry.data.image, alt: entry.data.title }}
+  image={{ url: eventImage, alt: entry.data.title }}
 >
   <PageHeader title={entry.data.title} />
 
@@ -38,7 +37,7 @@ const isFutureEvent = isFutureDate(entry.data.endDate || entry.data.date);
         <div class="lg:w-2/5">
           <div class="overflow-hidden rounded-2xl shadow-lg border border-gray-100">
             <img 
-              src={entry.data.image} 
+              src={eventImage}
               alt={entry.data.title} 
               class="w-full h-auto block"
             />
@@ -98,7 +97,7 @@ const isFutureEvent = isFutureDate(entry.data.endDate || entry.data.date);
 
       <div class="max-w-3xl border-t border-gray-100 pt-10">
         <article class="prose prose-lg prose-primary max-w-none">
-          <Content />
+          {Content ? <Content /> : <p>{entry.data.summary}</p>}
         </article>
 
         <div class="mt-16 flex gap-4">
