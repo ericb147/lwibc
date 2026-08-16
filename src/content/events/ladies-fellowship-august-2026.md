@@ -1,7 +1,7 @@
 ---
 title: "Ladies' Fellowship"
-date: 2026-08-28
-endDate: 2026-08-28
+date: 2026-08-21
+endDate: 2026-08-21
 time: "7:00 PM"
 location: "Fellowship Hall"
 address: "7561 Duncan Gap Rd. Wise, VA 24293"
