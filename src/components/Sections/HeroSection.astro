@@ -1,191 +1,72 @@
 ---
 import Button from "../UI/Button.astro";
 
-interface Slide {
-  title: string;
-  subtitle: string;
-  video: string;
-  poster: string; 
+export interface Props {
+  title?: string;
+  subtitle?: string;
   ctaText?: string;
   ctaLink?: string;
-}
-
-export interface Props {
-  slides?: Slide[];
+  videoSrc?: string;
+  posterSrc?: string;
 }
 
 const {
-  slides = [
-    {
-      title: "Welcome to Living Waters Independent Baptist Church",
-      subtitle: "Preaching the Word. Proclaiming the Gospel.",
-      video: "/uploads/preaching-hero-small.mp4",
-      poster: "/uploads/preaching.png",
-      ctaText: "Plan Your Visit",
-      ctaLink: "/im-new"
-    },
-    {
-      title: "Welcome to Living Waters Independent Baptist Church",
-      subtitle: "Preaching the Word. Proclaiming the Gospel.",
-      video: "/uploads/vbs-hero-small.mp4",
-      poster: "/uploads/vbs.png",
-      ctaText: "Plan Your Visit",
-      ctaLink: "/im-new"
-    },{
-      title: "Welcome to Living Waters Independent Baptist Church",
-      subtitle: "Preaching the Word. Proclaiming the Gospel.",
-      video: "/uploads/singing-hero-small.mp4",
-      poster: "/uploads/singing.png",
-      ctaText: "Plan Your Visit",
-      ctaLink: "/im-new"
-    },{
-      title: "Welcome to Living Waters Independent Baptist Church",
-      subtitle: "Preaching the Word. Proclaiming the Gospel.",
-      video: "/uploads/baptism-hero-small.mp4",
-      poster: "/uploads/baptism.png",
-      ctaText: "Plan Your Visit",
-      ctaLink: "/im-new"
-    }
-  ]
+  title = "Welcome to Living Waters Independent Baptist Church",
+  subtitle = "Preaching the Word. Proclaiming the Gospel.",
+  ctaText = "Plan Your Visit",
+  ctaLink = "/im-new",
+  videoSrc = "/uploads/hero.mp4",
+  posterSrc = "/uploads/hero-still.webp"
 } = Astro.props;
 ---
 
-<section class="relative h-[70vh] min-h-[500px] w-full overflow-hidden bg-black pt-20" id="hero-carousel">
-  {slides.map((slide, index) => (
-    <div 
-      class={`absolute inset-0 z-0 transition-opacity duration-1000 ease-in-out flex items-center ${index === 0 ? 'opacity-100' : 'opacity-0'}`}
-      data-slide-index={index}
-    >
-      <video 
-        autoplay={index === 0} 
-        muted 
-        playsinline 
-        poster={slide.poster}
-        class="absolute inset-0 w-full h-full object-cover"
-      >
-        {index === 0 ? (
-          <source src={slide.video} type="video/mp4" />
-        ) : (
-          <source data-src={slide.video} type="video/mp4" />
-        )}
-      </video>
+<section class="relative h-[70vh] min-h-[500px] w-full overflow-hidden bg-black pt-20" id="hero">
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster={posterSrc}
+    class="absolute inset-0 z-0 h-full w-full object-cover motion-reduce:hidden"
+    aria-hidden="true"
+  >
+    <source src={videoSrc} />
+  </video>
 
-      <div class="absolute inset-0 z-10" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));"></div>
+  <div
+    class="absolute inset-0 z-0 hidden bg-cover bg-center motion-reduce:block"
+    style={`background-image: url('${posterSrc}')`}
+    aria-hidden="true"
+  ></div>
 
-      <div class="container relative z-20 mx-auto px-4">
-        <div class="max-w-3xl text-white">
-          <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white leading-tight">
-            {slide.title}
-          </h1>
-          <p class="text-xl md:text-2xl mb-8 text-white">
-            {slide.subtitle}
-          </p>
-          
-          <div class="flex flex-wrap gap-4">
-            <Button href={slide.ctaLink} variant="primary" size="lg">
-              {slide.ctaText}
-            </Button>
-            
-            <Button 
-              href="/sermons" 
-              variant="outline" 
-              size="lg" 
-              class="bg-white/10 text-white border-white hover:bg-white hover:text-gray-900 backdrop-blur-sm transition-all"
-            >
-              Watch Sermons
-            </Button>
-          </div>
+  <div class="absolute inset-0 z-10" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));"></div>
+
+  <div class="container relative z-20 mx-auto px-4">
+    <div class="flex min-h-[calc(70vh-5rem)] items-center">
+      <div class="max-w-3xl text-white">
+        <h1 class="mb-4 text-4xl font-bold leading-tight text-white md:text-6xl">
+          {title}
+        </h1>
+        <p class="mb-8 text-xl text-white md:text-2xl">
+          {subtitle}
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <Button href={ctaLink} variant="primary" size="lg">
+            {ctaText}
+          </Button>
+
+          <Button
+            href="/sermons"
+            variant="outline"
+            size="lg"
+            class="bg-white/10 text-white border-white hover:bg-white hover:text-gray-900 backdrop-blur-sm transition-all"
+          >
+            Watch Sermons
+          </Button>
         </div>
       </div>
     </div>
-  ))}
+  </div>
 </section>
-
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    const slideContainers = Array.from(document.querySelectorAll('#hero-carousel [data-slide-index]'));
-    if (!slideContainers.length) return;
-
-    let current = 0;
-    let isTransitioning = false;
-    const minDisplayMs = 4500; // minimum time each slide stays visible
-    const transitionMs = 1000; // should match the CSS transition-duration
-    let intervalId: NodeJS.Timeout | null = null;
-
-    function preloadVideoForSlide(slide: Element) {
-      const video = slide.querySelector('video');
-      if (!video) return;
-      const source = video.querySelector('source[data-src]') as HTMLSourceElement;
-      if (source) {
-        source.src = source.dataset.src || '';
-        source.removeAttribute('data-src');
-        video.load();
-      }
-    }
-
-    function showSlide(index: number) {
-      slideContainers.forEach((s, i) => {
-        if (i === index) {
-          s.classList.replace('opacity-0', 'opacity-100');
-          const v = s.querySelector('video');
-          if (v) {
-            v.currentTime = 0;
-            v.play().catch(() => {});
-          }
-        } else {
-          s.classList.replace('opacity-100', 'opacity-0');
-          const v = s.querySelector('video');
-          if (v) v.pause();
-        }
-      });
-    }
-
-    function goToNextSlide() {
-      if (isTransitioning) return;
-      isTransitioning = true;
-
-      const oldSlide = slideContainers[current];
-      current = (current + 1) % slideContainers.length;
-      const nextSlide = slideContainers[current];
-
-      // Ensure next video's source is loaded before playing
-      preloadVideoForSlide(nextSlide);
-
-      // Crossfade
-      nextSlide.classList.replace('opacity-0', 'opacity-100');
-      const nextVideo = nextSlide.querySelector('video');
-      if (nextVideo) {
-        nextVideo.currentTime = 0;
-        nextVideo.play().catch(() => {});
-      }
-
-      oldSlide.classList.replace('opacity-100', 'opacity-0');
-
-      setTimeout(() => {
-        const oldVideo = oldSlide.querySelector('video');
-        if (oldVideo) oldVideo.pause();
-        isTransitioning = false;
-      }, transitionMs);
-    }
-
-    // Preload first and second slides to avoid hiccups
-    preloadVideoForSlide(slideContainers[0]);
-    if (slideContainers[1]) preloadVideoForSlide(slideContainers[1]);
-
-    // Ensure the initial slide is shown and playing
-    showSlide(0);
-
-    // Use a fixed interval for slide changes (decoupled from video duration)
-    if (slideContainers.length > 1) {
-      intervalId = setInterval(() => {
-        goToNextSlide();
-      }, minDisplayMs);
-
-      window.addEventListener('beforeunload', () => {
-        if (intervalId) clearInterval(intervalId);
-      }, { once: true });
-    }
-  });
-</script>
