@@ -93,6 +93,12 @@ const { Content } = await entry.render();
             </div>
             
             <div class="flex flex-col space-y-3">
+              {entry.data.flyer && (
+                <Button href={entry.data.flyer} variant="secondary">
+                  Download Flyer
+                </Button>
+              )}
+
               <Button href="/contact?subject=Ministry+Inquiry" variant="primary">
                 Get Involved
               </Button>
