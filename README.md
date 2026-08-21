@@ -154,6 +154,42 @@ Join us as we look forward to what God has in store for our church in 2026. Afte
 2. The script will create the markdown file with proper frontmatter formatting
 3. You will need the YouTube API key for this to work.
 
+#### Creating Monthly Event Files via Script
+
+Use the standalone monthly event generator to populate the recurring event markdown files for one month at a time.
+
+```bash
+node generate-monthly-events.cjs --month 2026-09
+```
+
+By default, the script creates all three recurring events for the month:
+
+- `mens` uses the second Saturday
+- `womens` uses the third Friday
+- `wonderful` uses the last Wednesday
+
+You can also run one event at a time:
+
+```bash
+node generate-monthly-events.cjs --mode mens --month 2026-09
+node generate-monthly-events.cjs --mode womens --month 2026-09
+node generate-monthly-events.cjs --mode wonderful --month 2026-09
+```
+
+To use a custom date for one event, pass the matching override flag:
+
+```bash
+node generate-monthly-events.cjs --mode mens --month 2026-09 --mens-date 2026-09-13
+node generate-monthly-events.cjs --mode womens --month 2026-09 --womens-date 2026-09-19
+node generate-monthly-events.cjs --mode wonderful --month 2026-09 --wonderful-date 2026-09-30
+```
+
+Helpful options:
+
+- `--dry-run` previews the files without writing them
+- `--overwrite` replaces an existing file if it already exists
+- `--month` accepts `YYYY-MM`; you can also use `--month <number> --year <year>` if you prefer
+
 #### Creating a New Sermon Manually
 
 1. Create a new file in `src/content/sermons/` with a `.md` extension
