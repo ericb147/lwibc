@@ -21,7 +21,9 @@ const eventsCollection = defineCollection({
     title: z.string(),
     date: z.date(), // Event start date
     endDate: z.date().optional(), // Event end date
-    time: z.string().optional(), // e.g., "09:00 AM - 11:00 AM"
+    time: z.string().optional(), // Display text, e.g., "09:00 AM - 11:00 AM"
+    startTime: z.string().regex(/^([01]\d|2[0-3]):[0-5]\d$/).optional(), // 24-hour local time
+    endTime: z.string().regex(/^([01]\d|2[0-3]):[0-5]\d$/).optional(), // 24-hour local time
     location: z.string(),
     address: z.string().optional(),
     image: z.string().startsWith('/uploads/events/'),
