@@ -1,6 +1,6 @@
 ---
 name: "Jason Ingles"
-title: "Youth Ministry Director"
+title: "Youth Pastor"
 image: "/uploads/staff/jason-ingles.webp"
 email: "jason.m.ingles@gmail.com"
 # phone: "+1-276-xxx-xxxx"
