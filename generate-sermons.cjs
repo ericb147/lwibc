@@ -14,16 +14,31 @@ const youtube = google.youtube({ version: 'v3', auth: API_KEY });
 async function fetchPlaylistItems() {
   let items = [];
   let nextPageToken = '';
-  do {
+  const seenPageTokens = new Set();
+
+  while (true) {
     const res = await youtube.playlistItems.list({
       part: ['snippet', 'contentDetails'],
       maxResults: 50,
       playlistId: PLAYLIST_ID,
-      pageToken: nextPageToken,
+      pageToken: nextPageToken || undefined,
     });
-    items = items.concat(res.data.items);
-    nextPageToken = res.data.nextPageToken;
-  } while (nextPageToken);
+
+    items = items.concat(res.data.items || []);
+    const pageToken = res.data.nextPageToken || '';
+
+    if (!pageToken) {
+      break;
+    }
+
+    if (seenPageTokens.has(pageToken)) {
+      console.warn('Stopping playlist pagination because YouTube returned a repeated page token.');
+      break;
+    }
+
+    seenPageTokens.add(pageToken);
+    nextPageToken = pageToken;
+  }
 
   return items;
 }
