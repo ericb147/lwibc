@@ -16,7 +16,16 @@ async function fetchPlaylistItems() {
   let nextPageToken = '';
   const seenPageTokens = new Set();
 
-  while (true) {
+  while (nextPageToken || !seenPageTokens.size) {
+    if (nextPageToken && seenPageTokens.has(nextPageToken)) {
+      console.warn('Stopping playlist pagination because YouTube returned a repeated page token.');
+      break;
+    }
+
+    if (nextPageToken) {
+      seenPageTokens.add(nextPageToken);
+    }
+
     const res = await youtube.playlistItems.list({
       part: ['snippet', 'contentDetails'],
       maxResults: 50,
@@ -25,37 +34,40 @@ async function fetchPlaylistItems() {
     });
 
     items = items.concat(res.data.items || []);
-    const pageToken = res.data.nextPageToken || '';
+    nextPageToken = res.data.nextPageToken || '';
 
-    if (!pageToken) {
+    if (!nextPageToken) {
       break;
     }
-
-    if (seenPageTokens.has(pageToken)) {
-      console.warn('Stopping playlist pagination because YouTube returned a repeated page token.');
-      break;
-    }
-
-    seenPageTokens.add(pageToken);
-    nextPageToken = pageToken;
   }
 
   return items;
 }
 
 async function fetchPublicVideoIds(videoIds) {
+  if (!videoIds.length) {
+    return [];
+  }
+
   let publicIds = [];
   for (let i = 0; i < videoIds.length; i += 50) {
     const batchIds = videoIds.slice(i, i + 50);
-    const res = await youtube.videos.list({
-      part: ['status'],
-      id: batchIds,
-    });
-    publicIds = publicIds.concat(
-      res.data.items
-        .filter(v => v.status.privacyStatus === 'public')
-        .map(v => v.id)
-    );
+    try {
+      const res = await youtube.videos.list({
+        part: ['status'],
+        id: batchIds,
+      });
+      publicIds = publicIds.concat(
+        (res.data.items || [])
+          .filter(v => v.status?.privacyStatus === 'public')
+          .map(v => v.id)
+      );
+    } catch (error) {
+      if (error.code === 403 && /quota/i.test(error.message || '')) {
+        throw new Error('YouTube API quota exceeded while checking video visibility.');
+      }
+      throw error;
+    }
   }
   return publicIds;
 }
@@ -97,44 +109,53 @@ draft: false
 }
 
 async function main() {
-  const items = await fetchPlaylistItems();
-  // Get list of already generated files (without extension)
-  const existingFiles = new Set(
-    fs.readdirSync(OUTPUT_DIR)
-      .filter(f => f.endsWith('.md'))
-      .map(f => f.replace(/\.md$/, ''))
-  );
+  try {
+    const items = await fetchPlaylistItems();
+    // Get list of already generated files (without extension)
+    const existingFiles = new Set(
+      fs.readdirSync(OUTPUT_DIR)
+        .filter(f => f.endsWith('.md'))
+        .map(f => f.replace(/\.md$/, ''))
+    );
 
-  const newItems = items.map(item => {
-    const { title } = item.snippet;
-    const { sermonTitle } = parseTitle(title);
-    const filenameBase = getFilenameBase(sermonTitle);
-    return { item, filenameBase };
-  }).filter(({ filenameBase }) => !existingFiles.has(filenameBase));
+    const newItems = items.map(item => {
+      const { title } = item.snippet;
+      const { sermonTitle } = parseTitle(title);
+      const filenameBase = getFilenameBase(sermonTitle);
+      return { item, filenameBase };
+    }).filter(({ filenameBase }) => !existingFiles.has(filenameBase));
 
-  if (newItems.length === 0) {
-    console.log('No new playlist items to process.');
-    return;
-  }
-
-  const videoIdsToCheck = newItems.map(({ item }) => item.contentDetails.videoId).filter(Boolean);
-  const publicVideoIds = new Set(await fetchPublicVideoIds(videoIdsToCheck));
-
-  for (const { item, filenameBase } of newItems) {
-    const { title, publishedAt, resourceId } = item.snippet;
-    const { sermonTitle, speaker } = parseTitle(title);
-    const videoId = resourceId.videoId;
-    if (!publicVideoIds.has(videoId)) {
-      console.log(`Skipping (not public): ${filenameBase}.md`);
-      continue;
+    if (newItems.length === 0) {
+      console.log('No new playlist items to process.');
+      return;
     }
 
-    const uploadDate = publishedAt.split('T')[0];
-    const date = getLastSunday(uploadDate);
-    const markdown = createMarkdown({ sermonTitle, speaker, date, videoId });
-    fs.writeFileSync(path.join(OUTPUT_DIR, filenameBase + '.md'), markdown);
-    console.log(`Created: ${filenameBase}.md`);
+    const videoIdsToCheck = newItems.map(({ item }) => item.contentDetails.videoId).filter(Boolean);
+    const publicVideoIds = new Set(await fetchPublicVideoIds(videoIdsToCheck));
+
+    for (const { item, filenameBase } of newItems) {
+      const { title, publishedAt, resourceId } = item.snippet;
+      const { sermonTitle, speaker } = parseTitle(title);
+      const videoId = resourceId.videoId;
+      if (!publicVideoIds.has(videoId)) {
+        console.log(`Skipping (not public): ${filenameBase}.md`);
+        continue;
+      }
+
+      const uploadDate = publishedAt.split('T')[0];
+      const date = getLastSunday(uploadDate);
+      const markdown = createMarkdown({ sermonTitle, speaker, date, videoId });
+      fs.writeFileSync(path.join(OUTPUT_DIR, filenameBase + '.md'), markdown);
+      console.log(`Created: ${filenameBase}.md`);
+    }
+  } catch (error) {
+    if (error.code === 403 && /quota/i.test(error.message || '')) {
+      console.error('YouTube API quota exceeded. Please wait for the quota reset or use a different API key.');
+      return;
+    }
+
+    console.error(error);
   }
 }
 
-main().catch(console.error);
+main();
